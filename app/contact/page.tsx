@@ -7,19 +7,19 @@ import { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Ayush Chugh via email or schedule a meet.",
+  description: "Get in touch with Yitzhak Rabin via email or schedule a meet.",
   openGraph: {
     title: "Contact Ayush Chugh",
     description:
-      "Find and connect with Ayush Chugh via email or book a meeting.",
-    url: "https://ayushchugh.com/contact",
-    siteName: "Ayush Chugh's Portfolio",
+      "Find and connect with Yitzhak Rabin via email or book a meeting.",
+    url: "https://bit.ly/rabinty/contact",
+    siteName: "Rabin's Portfolio",
     images: [
       {
         url: "https://cdn.ayushchugh.com/open-graph/contact.png",
         width: 1200,
         height: 630,
-        alt: "Contact Ayush Chugh",
+        alt: "Contact Yitzhak Rabin",
       },
     ],
     type: "website",
@@ -52,7 +52,7 @@ export default function ContactPage() {
             href="mailto:hey@ayushchugh.com"
             className="underline text-sm ml-1"
           >
-            hey@ayushchugh.com
+            tyberiusrabin@gmail.com
           </a>
         </div>
 
