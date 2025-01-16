@@ -7,32 +7,32 @@ import { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Ayush Chugh via email or schedule a meet.",
+  description: "Get in touch with Yitzhak Rabin via email or schedule a meet.",
   openGraph: {
-    title: "Contact Ayush Chugh",
+    title: "Contact Yitzhak Rabin",
     description:
-      "Find and connect with Ayush Chugh via email or book a meeting.",
-    url: "https://ayushchugh.com/contact",
-    siteName: "Ayush Chugh's Portfolio",
+      "Find and connect with Yitzhak Rabin via email or book a meeting.",
+    url: "https://bit.ly/rabinty/contact",
+    siteName: "Rabin's Portfolio",
     images: [
       {
         url: "https://cdn.ayushchugh.com/open-graph/contact.png",
         width: 1200,
         height: 630,
-        alt: "Contact Ayush Chugh",
+        alt: "Contact Yitzhak Rabin",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Ayush Chugh",
-    description: "Connect with Ayush Chugh via email or schedule a meet.",
+    title: "Contact Yitzhak Rabin",
+    description: "Connect with Yitzhak Rabin via email or schedule a meet.",
     images: ["https://cdn.ayushchugh.com/open-graph/contact.png"],
-    creator: "@aayushchugh_x",
-    creatorId: "@aayushchugh_x",
-    site: "@aayushchugh_x",
-    siteId: "@aayushchugh_x",
+    creator: "@0x_Sc0rpi0n",
+    creatorId: "@0x_Sc0rpi0n",
+    site: "@0x_Sc0rpi0n",
+    siteId: "@0x_Sc0rpi0n",
   },
 };
 
@@ -49,7 +49,7 @@ export default function ContactPage() {
         <div className="flex items-center mb-4">
           <EnvelopeSimple size={24} />
           <a
-            href="mailto:tyberiusrabin@gmail.com"
+            href="mailto:hey@ayushchugh.com"
             className="underline text-sm ml-1"
           >
             tyberiusrabin@gmail.com
