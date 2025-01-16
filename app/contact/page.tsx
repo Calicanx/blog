@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with Yitzhak Rabin via email or schedule a meet.",
   openGraph: {
-    title: "Contact Ayush Chugh",
+    title: "Contact Yitzhak Rabin",
     description:
       "Find and connect with Yitzhak Rabin via email or book a meeting.",
     url: "https://bit.ly/rabinty/contact",
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Ayush Chugh",
-    description: "Connect with Ayush Chugh via email or schedule a meet.",
+    title: "Contact Yitzhak Rabin",
+    description: "Connect with Yitzhak Rabin via email or schedule a meet.",
     images: ["https://cdn.ayushchugh.com/open-graph/contact.png"],
-    creator: "@aayushchugh_x",
-    creatorId: "@aayushchugh_x",
-    site: "@aayushchugh_x",
-    siteId: "@aayushchugh_x",
+    creator: "@0x_Sc0rpi0n",
+    creatorId: "@0x_Sc0rpi0n",
+    site: "@0x_Sc0rpi0n",
+    siteId: "@0x_Sc0rpi0n",
   },
 };
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
         </h2>
         <div>
           <a
-            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ32m0Ha13-Djq7bDeqBFdEgjmkBLk3uIF9LGwK2eIrl1BGBVxBAhqnpYj7ealqSNG0JYpSUTikB?gv=true"
+            href="https://calendly.com/rbnchris0/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="underline text-sm"
