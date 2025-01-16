@@ -8,11 +8,11 @@ import Separator from "./components/separator";
 export const metadata: Metadata = {
 	title: "Yitzhak Rabin",
 	description:
-		"I’m a Full Stack Web Developer, trying to make the internet a bit cooler one website at a time.",
+		"Experienced Senior Software Engineer",
 	openGraph: {
 		title: "Yitzhak Rabin",
 		description:
-			"I’m a Full Stack Web Developer, trying to make the internet a bit cooler one website at a time.",
+			"Experienced Senior Software Engineer",
 		url: "https://bit.ly/rabinty",
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Yitzhak Rabin",
 		description:
-			"I’m a Full Stack Web Developer from India, trying to make the internet a bit cooler one website at a time.",
+			"Experienced Senior Software Engineer",
 		images: ["https://cdn.ayushchugh.com/open-graph/home.png"],
 		creator: "@0x_Sc0rpi0n",
 		creatorId: "@0x_Sc0rpi0n",
@@ -45,8 +45,7 @@ export default function Page() {
 					Hello, I'm Yitzhak Rabin 👋
 				</h1>
 				<p className="text-lg prose prose-neutral dark:prose-invert">
-					I’m a Full Stack Web Developer, trying to make the
-					internet a bit cooler one website at a time.
+					Experienced Software Engineer
 				</p>
 			</header>
 
@@ -58,7 +57,7 @@ export default function Page() {
 					I specialize in creating user-friendly digital experiences. Currently,
 					I work as a <strong>Senior Software Engineer</strong> with{" "}
 					<span className="not-prose">
-						<Badge href="https://www.linkedin.com/company/vibraniumsoft/posts/?feedView=all">
+						<Badge href="https://www.senderstack.com">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/vibraniumsoft.jpeg"}
 								alt="Vibranium Soft"
@@ -66,12 +65,12 @@ export default function Page() {
 								width={16}
 								className={"pr-1"}
 							/>
-							Vibranium Soft
+							Senderstack Inc
 						</Badge>
 					</span>{" "}
-					where we are building a flight booking project and{" "}
+					where we are building intelligent AI assistants and{" "}
 					<span className="not-prose">
-						<Badge href="https://www.keizerworks.com/">
+						<Badge href="https://www.bit.ly/IvoryAfrica">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/keizer.svg"}
 								alt="Keizer Works"
@@ -79,16 +78,16 @@ export default function Page() {
 								width={16}
 								className={"pr-1"}
 							/>
-							Keizer Works
+							 Ivory Africa
 						</Badge>
 					</span>
-					, where I maintain their open-source projects and contribute to
-					innovative solutions.
+					, where I maintain the project and contribute to
+					innovative solutions in job searching and matching.
 				</p>
 				<p>
 					One of my most significant achievements is developing{" "}
 					<span className="not-prose">
-						<Badge href="https://worldtravels.com">
+						<Badge href="https://smartrent-eta.vercel.app/">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/worldtravels.png"}
 								alt="Worldtravels"
@@ -96,10 +95,10 @@ export default function Page() {
 								width={16}
 								className={"pr-1"}
 							/>
-							Worldtravels
+							Smartrent
 						</Badge>
 					</span>
-					, a B2B flight booking platform for a travel agency. For more of my
+					, a property management software for agencies, landlords and tenants. For more of my
 					projects, visit the <Link href="/projects">Projects</Link> page.
 				</p>
 			</div>
@@ -109,18 +108,17 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Leadership & Community</h2>
 				<p>
-					As the Team Lead at the Innovation Club of{" "}
-					<a href="https://ccetdiploma.edu.in/" target="_blank">
-						CCET College
+					As the Team Lead at {" "}
+					<a href="https://senderstack.com/" target="_blank">
+						Senderstack
 					</a>
 					, I’ve learned how to lead a team and stay organized. I also assist in{" "}
-					<a href="https://chdtechnicaleducation.gov.in/" target="_blank">
+					<a href="https://www.smartacademy.go.ke/" target="_blank">
 						ICT
 					</a>{" "}
-					training sessions, teaching government employees essential computer
-					skills. Additionally, I help organize the <i>Talent Hunt</i> cultural
-					program and serve as the student coordinator for <i>Jhalak</i>, our
-					college’s digital newsletter.
+					training sessions, teaching government employees, farmers and regular citizens essential computer
+					skills and cybersecurity. Additionally, I help organize the <i>Talent Hunt</i> cultural
+					program.	
 				</p>
 			</div>
 
@@ -129,9 +127,7 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Personal Interests</h2>
 				<p>
-					Outside of work, I enjoy exploring Vedic astrology, playing the
-					guitar, and spending time with friends. I’m also pursuing a diploma in
-					Computer Science Engineering (CSE).
+					Outside of work, I enjoy reading philosophy, fiction, and non-fiction books, riding motorcycles, spending quality time with friends, and advancing my pentesting skills.
 				</p>
 			</div>
 
@@ -140,8 +136,8 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Writing</h2>
 				<p>
-					I’ve started writing <Link href="/blog">blogs</Link> to help others
-					improve their engineering skills. Stay tuned for more content!
+					I’ve started writing <Link href="/blog">blogs</Link> to help myself and others 
+					improve engineering skills. And act as a reference for knowledge over the years.
 				</p>
 			</div>
 
@@ -157,7 +153,7 @@ export default function Page() {
 						className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
 						rel="noopener noreferrer"
 						target="_blank"
-						href="https://twitter.com/aayushchugh_x"
+						href="https://x.com/chainsaww_man"
 					>
 						<ArrowIcon />
 						<p className="h-7 ml-2">Follow me</p>

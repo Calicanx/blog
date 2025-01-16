@@ -7,19 +7,19 @@ import { EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Yitzhak Rabin via email or schedule a meet.",
+  description: "Get in touch with Ayush Chugh via email or schedule a meet.",
   openGraph: {
     title: "Contact Ayush Chugh",
     description:
-      "Find and connect with Yitzhak Rabin via email or book a meeting.",
-    url: "https://bit.ly/rabinty/contact",
-    siteName: "Rabin's Portfolio",
+      "Find and connect with Ayush Chugh via email or book a meeting.",
+    url: "https://ayushchugh.com/contact",
+    siteName: "Ayush Chugh's Portfolio",
     images: [
       {
         url: "https://cdn.ayushchugh.com/open-graph/contact.png",
         width: 1200,
         height: 630,
-        alt: "Contact Yitzhak Rabin",
+        alt: "Contact Ayush Chugh",
       },
     ],
     type: "website",
@@ -49,7 +49,7 @@ export default function ContactPage() {
         <div className="flex items-center mb-4">
           <EnvelopeSimple size={24} />
           <a
-            href="mailto:hey@ayushchugh.com"
+            href="mailto:tyberiusrabin@gmail.com"
             className="underline text-sm ml-1"
           >
             tyberiusrabin@gmail.com
@@ -64,7 +64,7 @@ export default function ContactPage() {
         </h2>
         <div>
           <a
-            href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ32m0Ha13-Djq7bDeqBFdEgjmkBLk3uIF9LGwK2eIrl1BGBVxBAhqnpYj7ealqSNG0JYpSUTikB?gv=true"
+            href="https://calendly.com/rbnchris0/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="underline text-sm"
