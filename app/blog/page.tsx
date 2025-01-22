@@ -10,31 +10,31 @@ export const metadata: Metadata = {
   description:
     "Read my thoughts on engineering, design, and product development.",
   openGraph: {
-    title: "Ayush Chugh's Blog",
+    title: "Yitzhak Rabin's Blog",
     description:
       "Explore blog posts on engineering, design, and product development.",
-    url: "https://ayushchugh.com/blog",
-    siteName: "Ayush Chugh's Portfolio",
+    url: "https://rabinty.vercel.app/blog",
+    siteName: "Yitzhak Rabin's Portfolio",
     images: [
       {
         url: "https://cdn.ayushchugh.com/open-graph/blogs.png",
         width: 1200,
         height: 630,
-        alt: "Ayush Chugh's Blog",
+        alt: "Yitzhak Rabin's Blog",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ayush Chugh's Blog",
+    title: "Yitzhak Rabin's Blog",
     description:
       "Read blog posts on engineering, design, and product development.",
     images: ["https://cdn.ayushchugh.com/open-graph/blogs.png"],
-    creator: "@aayushchugh_x",
-    creatorId: "@aayushchugh_x",
-    site: "@aayushchugh_x",
-    siteId: "@aayushchugh_x",
+    creator: "@0x_Sc0rpi0n",
+    creatorId: "@0x_Sc0rpi0n",
+    site: "@0x_Sc0rpi0n",
+    siteId: "@0x_Sc0rpi0n",
   },
 };
 

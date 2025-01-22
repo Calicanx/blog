@@ -8,18 +8,18 @@ import Separator from "./components/separator";
 export const metadata: Metadata = {
 	title: "Yitzhak Rabin",
 	description:
-		"Experienced Senior Software Engineer",
+		"Software Development Engineer",
 	openGraph: {
 		title: "Yitzhak Rabin",
 		description:
-			"Experienced Senior Software Engineer",
+			"Software Development Engineer",
 		url: "https://bit.ly/rabinty",
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
 				url: "https://cdn.ayushchugh.com/open-graph/home.png",
 				height: 630,
-				alt: "Ayush Chugh",
+				alt: "Yitzhak Rabin",
 			},
 		],
 		type: "website",
@@ -28,12 +28,12 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Yitzhak Rabin",
 		description:
-			"Experienced Senior Software Engineer",
+			"Software Development Engineer",
 		images: ["https://cdn.ayushchugh.com/open-graph/home.png"],
 		creator: "@0x_Sc0rpi0n",
 		creatorId: "@0x_Sc0rpi0n",
-		site: "@0x_sc0rpi0n",
-		siteId: "@Sc0rpi0n",
+		site: "@0x_Sc0rpi0n",
+		siteId: "@0x_Sc0rpi0n",
 	},
 };
 
@@ -45,7 +45,7 @@ export default function Page() {
 					Hello, I'm Yitzhak Rabin 👋
 				</h1>
 				<p className="text-lg prose prose-neutral dark:prose-invert">
-					Experienced Software Engineer
+					Software Development Engineer
 				</p>
 			</header>
 
@@ -60,7 +60,7 @@ export default function Page() {
 						<Badge href="https://www.senderstack.com">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/vibraniumsoft.jpeg"}
-								alt="Vibranium Soft"
+								alt="Senderstack"
 								height={16}
 								width={16}
 								className={"pr-1"}
@@ -70,10 +70,10 @@ export default function Page() {
 					</span>{" "}
 					where we are building intelligent AI assistants and{" "}
 					<span className="not-prose">
-						<Badge href="https://www.bit.ly/IvoryAfrica">
+						<Badge href="https://ivory-africa.vercel.app/">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/keizer.svg"}
-								alt="Keizer Works"
+								alt="Ivory Africa"
 								height={16}
 								width={16}
 								className={"pr-1"}
@@ -87,10 +87,10 @@ export default function Page() {
 				<p>
 					One of my most significant achievements is developing{" "}
 					<span className="not-prose">
-						<Badge href="https://smartrent-eta.vercel.app/">
+						<Badge href="https://smart-rent-ashen.vercel.app/">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/worldtravels.png"}
-								alt="Worldtravels"
+								alt="Smartrent"
 								height={16}
 								width={16}
 								className={"pr-1"}

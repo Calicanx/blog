@@ -10,19 +10,19 @@ import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ayushchugh.com/"),
+  metadataBase: new URL("https://rabinty.vercel.app/"),
   title: {
-    default: "Ayush Chugh",
-    template: "%s | Ayush Chugh",
+    default: "Yitzhak Rabin",
+    template: "%s | Yitzhak Rabin",
   },
   description:
-    "Passionate full stack developer from India. On the way to master programming",
+    "Passionate full stack developer. On the way to master programming",
   openGraph: {
-    title: "Ayush Chugh",
+    title: "Yitzhak Rabin",
     description:
-      "Passionate full stack developer from India. On the way to master programming.",
-    url: "https://ayushchugh.com/",
-    siteName: "Ayush Chugh's Portfolio",
+      "Passionate full stack developer. On the way to master programming.",
+    url: "https://rabinty.vercel.app/",
+    siteName: "Yitzhak Rabin's Portfolio",
     locale: "en_US",
     type: "website",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/ogs/ogs-bg.png",
         width: 1200,
         height: 630,
-        alt: "Ayush Chugh Full Stack Developer",
+        alt: "Yitzhak Rabin Full Stack Developer",
       },
     ],
   },
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Ayush Chugh",
+    title: "Yitzhak Rabin",
     card: "summary_large_image",
-    creator: "@aayushchugh_x",
-    creatorId: "@aayushchugh_x",
-    site: "@aayushchugh_x",
-    siteId: "@aayushchugh_x",
+    creator: "@0x_Sc0rpi0n",
+    creatorId: "@0x_Sc0rpi0n",
+    site: "@0x_Sc0rpi0n",
+    siteId: "@0x_Sc0rpi0n",
     description:
-      "Passionate full stack developer from India. On the way to master programming.",
+      "Passionate full stack developer. On the way to master programming.",
     images: ["/ogs/ogs-bg.png"],
   },
   icons: {
