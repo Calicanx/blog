@@ -6,28 +6,28 @@ import VolunteeringItem from "../components/volunteer-item";
 export const metadata: Metadata = {
 	title: "Resume",
 	description:
-		"A summary of Ayush Chugh’s corporate contributions, skills, and experience as a Full-Stack Developer, including work with Tap Invest, Shri Property, and A2INFINITE.",
+		"A summary of Yitzhak Rabin’s corporate contributions, skills, and experience as a Full-Stack Developer, including work with Tap Invest, Shri Property, and A2INFINITE.",
 	openGraph: {
 		type: "article",
-		url: `https://ayushchugh.com/resume`,
-		title: "Ayush Chugh’s Resume",
-		siteName: "Ayush Chugh's Portfolio",
+		url: `https://rabinty.vercel.app/`,
+		title: "Yitzhak Rabin’s Resume",
+		siteName: "Yitzhak Rabin's Portfolio",
 		description:
-			"Detailed resume of Ayush Chugh, Full-Stack Developer, with work experience, projects, and educational background.",
+			"Detailed resume of Yitzhak Rabin, Full-Stack Developer, with work experience, projects, and educational background.",
 		images: [
 			{
 				url: `https://cdn.ayushchugh.com/open-graph/resume.png`,
 				width: 1200,
 				height: 630,
-				alt: "Ayush Chugh's Resume",
+				alt: "Yitzhak Rabin's Resume",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Ayush Chugh's Resume",
+		title: "YItzhak Rabin's Resume",
 		description:
-			"Check out Ayush Chugh’s Full-Stack Developer resume, showcasing professional contributions and achievements.",
+			"Check out Yitzhak Rabin’s Full-Stack Developer resume, showcasing professional contributions and achievements.",
 		images: ["https://cdn.ayushchugh.com/open-graph/resume.png"],
 		creator: "@aayushchugh_x",
 		creatorId: "@aayushchugh_x",

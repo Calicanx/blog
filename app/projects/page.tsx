@@ -4,93 +4,82 @@ import ProjectCard from "../components/project-card";
 export const metadata: Metadata = {
 	title: "Projects",
 	description:
-		"Explore Ayush Chugh's projects, including Shriproperty, A2INFINITE, Worldtravels, and various open-source contributions.",
+		"Explore  Yitzhak Rabin's projects, including SmartRent, Senderstack, Ivory Africa, and various open-source contributions.",
 	openGraph: {
-		title: "Ayush Chugh's Projects",
+		title: "Yitzhak Rabin's Projects",
 		description:
-			"Discover the latest projects built by Ayush Chugh, including web development and open-source contributions.",
-		url: "https://ayushchugh.com/projects",
-		siteName: "Ayush Chugh's Portfolio",
+			"Discover the latest projects built by Yitzhak Rabin, including web development and open-source contributions.",
+		url: "https://rabinty.vercel.app//projects",
+		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
 				url: "https://cdn.ayushchugh.com/open-graph/projects.png",
 				width: 1200,
 				height: 630,
-				alt: "Ayush Chugh's Projects",
+				alt: "Yitzhak Rabin's Projects",
 			},
 		],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Ayush Chugh's Projects",
+		title: "Yitzhak Rabin's Projects",
 		description:
-			"Explore a variety of projects and open-source contributions by Ayush Chugh.",
+			"Explore a variety of projects and open-source contributions by Yitzhak Rabin.",
 		images: ["https://cdn.ayushchugh.com/open-graph/projects.png"],
-		creator: "@aayushchugh_x",
-		creatorId: "@aayushchugh_x",
-		site: "@aayushchugh_x",
-		siteId: "@aayushchugh_x",
+		creator: "@0x_Sc0rpi0n",
+		creatorId: "@0x_Sc0rpi0n",
+		site: "@0x_Sc0rpi0n",
+		siteId: "0x_Sc0rpi0n",
 	},
 };
 
 const projectsData = [
 	{
-		project: "Worldtravels",
-		logo: "https://cdn.ayushchugh.com/logos/worldtravels.png",
+		project: "Beesrani",
 		description:
-			"A B2B flight booking platform for travel agencies to manage bookings and payments.",
-		technologies: ["React", "Redux", "TypeScript", "Node.js"],
-		website: "https://www.worldtravelsonline.in/en",
+			"Agricultural platform offering African's a wide range of products & services to improve agriculture & income.",
+		technologies: ["React", "Redux", "TypeScript", "Tailwind"],
+		website: "https://beesraniagrihub.vercel.app/",
 	},
 	{
-		project: "Shriproperty",
+		project: "Senderstack",
 		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
 		description:
-			"A real estate platform that simplifies the process of finding and listing properties.",
-		technologies: ["React", "Node.js", "MongoDB", "Express.js"],
-		website: "https://www.shriproperty.com",
+			"Combination of a platform and apps that manage and reply to emails using Artificial Intelligence (AI).",
+		technologies: ["React", "Laravel", "OpenAI", "CloudFlare"],
+		website: "https://www.senderstack.com",
 	},
 	{
-		project: "Invoicen",
-		logo: "https://cdn.ayushchugh.com/logos/keizer-light-icon.png",
+		project: "Ivory Africa",
 		description:
-			"A Simple Invoice Generator for Freelancers and Businesses and enterprises.",
+			"A platform to connect and match talent with hiring companies in Africa.",
 		technologies: ["NextJS", "shadcn", "TypeScript", "Tailwind"],
-		website: "https://invoicen.keizerworks.com",
+		website: "https://ivory-africa.vercel.app/",
 	},
 	{
-		project: "A2INFINITE",
-		logo: "https://cdn.ayushchugh.com/logos/a2infinite.png",
+		project: "SmartRent",
 		description:
-			"A platform for downloadable practice worksheets for students.",
-		technologies: ["HTML", "CSS", "JavaScript"],
-		website: "https://www.a2infinite.com",
+			"A platform for aiding propety managers to manage properties and tenants.",
+		technologies: ["React", "Laravel", "Tailwind", "Docker"],
+		website: "https://smart-rent-ashen.vercel.app/",
 	},
 
 	{
-		project: "Repo Command",
+		project: "Bazzu",
 		logo: "https://cdn.ayushchugh.com/logos/repository-commander.svg",
 		description:
-			"A Github app that lets you automate tasks by adding labels and using `/` commands in comments to approve or merge pull requests.",
-		technologies: ["Node.js", "TypeScript", "Probot"],
-		website: "https://github.com/marketplace/repo-command",
+			"A standalone ecommerce platform to sell fashion items and toys.",
+		technologies: ["React", "TypeScript", "Remix", "Supabase"],
+		website: "https://bazzu--eight.vercel.app",
 	},
 
 	{
-		project: "Soumya Sourav's Portfolio",
+		project: "Safari Travel",
 		description:
-			"Personal portfolio website for Soumya Sourav, a Asst. Vice President",
-		technologies: ["NextJS", "TypeScript", "Firebase"],
-		website: "https://soumyasourav.com",
-	},
-
-	{
-		project: "FlipTimer",
-		description:
-			"A countdown timer that lets users set a target date and displays time left in months, weeks, days, hours, minutes, and seconds.",
-		technologies: ["NextJS", "TypeScript", "shadcn", "framer-motion"],
-		website: "https://fliptimer.ayushchugh.com",
+			"Travel booking website that caters to travellers of all types especially ones travelling to Africa.",
+		technologies: ["NextJS", "TypeScript", "Supabase"],
+		website: "https://safari-travel-sigma.vercel.app/",
 	},
 ];
 
