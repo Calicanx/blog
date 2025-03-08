@@ -55,7 +55,7 @@ export default function Page() {
 				<h2>Professional Work</h2>
 				<p>
 					I specialize in creating user-friendly digital experiences. Currently,
-					I work as a <strong>Senior Software Engineer</strong> with{" "}
+					I work as a <strong>Senior Software Engineer</strong> at{" "}
 					<span className="not-prose">
 						<Badge href="https://www.senderstack.com">
 							<Image
@@ -82,12 +82,12 @@ export default function Page() {
 						</Badge>
 					</span>
 					, where I maintain the project and contribute to
-					innovative solutions in job searching and matching.
+					innovative solutions in job searching and matching globally and resume writing and other AI services.
 				</p>
 				<p>
 					One of my most significant achievements is developing{" "}
 					<span className="not-prose">
-						<Badge href="https://smart-rent-ashen.vercel.app/">
+						<Badge href="https://beesraniagrihub.vercel.app/">
 							<Image
 								src={"https://cdn.ayushchugh.com/logos/worldtravels.png"}
 								alt="Smartrent"
@@ -95,10 +95,10 @@ export default function Page() {
 								width={16}
 								className={"pr-1"}
 							/>
-							Smartrent
+							Beesrani
 						</Badge>
 					</span>
-					, a property management software for agencies, landlords and tenants. For more of my
+					, a combination of platforms using Artificial Intelligence (AI) to help farmers minimize input, maximize output and connect markets globally. For more of my
 					projects, visit the <Link href="/projects">Projects</Link> page.
 				</p>
 			</div>
@@ -117,8 +117,16 @@ export default function Page() {
 						ICT
 					</a>{" "}
 					training sessions, teaching government employees, farmers and regular citizens essential computer
-					skills and cybersecurity. Additionally, I help organize the <i>Talent Hunt</i> cultural
-					program.	
+					skills and cybersecurity. Additionally, I manage a few companies and Saas started through the years such as {" "}
+					<a href="https://ivory-africa.vercel.app/" target="_blank">
+						Ivory Africa
+					</a>{" "}, {" "}
+					<a href="https://easy-cart-journey.vercel.app/" target="_blank">
+						Bazzu
+					</a>{" "}, {" "}
+					<a href="https://smart-rent-ashen.vercel.app/" target="_blank">
+						SmartRent
+					</a>{" "}among others.	
 				</p>
 			</div>
 
