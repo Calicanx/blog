@@ -39,7 +39,7 @@ const projectsData = [
 		project: "Beesrani",
 		description:
 			"Agricultural platform offering African's a wide range of products & services to improve agriculture & income.",
-		technologies: ["React", "Redux", "TypeScript", "Tailwind"],
+		technologies: ["React", "Redux", "TypeScript", "Tailwind", "Grok"],
 		website: "https://beesraniagrihub.vercel.app/",
 	},
 	{
@@ -47,7 +47,7 @@ const projectsData = [
 		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
 		description:
 			"Combination of a platform and apps that manage and reply to emails using Artificial Intelligence (AI).",
-		technologies: ["React", "Laravel", "OpenAI", "CloudFlare"],
+		technologies: ["React", "Laravel", "PHP", "OpenAI", "Tailwind", "NextJs", "Plasmo", "CloudFlare"],
 		website: "https://www.senderstack.com",
 	},
 	{
@@ -70,8 +70,15 @@ const projectsData = [
 		logo: "https://cdn.ayushchugh.com/logos/repository-commander.svg",
 		description:
 			"A standalone ecommerce platform to sell fashion items and toys.",
-		technologies: ["React", "TypeScript", "Remix", "Supabase"],
-		website: "https://bazzu--eight.vercel.app",
+		technologies: ["React", "TypeScript", "Remix", "FastAPI", "MySQL", "Python"],
+		website: "https://easy-cart-journey.vercel.app/",
+	},
+	{
+		project: "CodeWhisperer",
+		description:
+			"Web Application platform to learn about Data Structures and Algorithms for novices and experts alike. Use it as a practice and knowledge index.",
+		technologies: ["NextJS", "TypeScript", "Supabase"],
+		website: "https://codewhisperer-three.vercel.app/",
 	},
 
 	{
