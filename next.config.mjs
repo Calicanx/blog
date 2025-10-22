@@ -9,6 +9,54 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "www.senderstack.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "senderstack.com", // <-- added (no www)
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "myphotoai.io",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "dukakuu.co.ke",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "andika.io",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.pms-dash-vision.lovable.app",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "pms-dash-vision.lovable.app",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.duaranet.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
 				hostname: "i.ibb.co",
 				port: "",
 				pathname: "/**",
