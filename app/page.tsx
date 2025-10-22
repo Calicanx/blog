@@ -37,6 +37,11 @@ export const metadata: Metadata = {
 	},
 };
 
+/**
+ * Profile page component that renders the author's personal and professional information, projects, community involvement, interests, and contact links.
+ *
+ * @returns The JSX section containing the header, content sections (Professional Work, Leadership & Community, Personal Interests, Writing), navigation hint, social follow link, and a contact mailto link.
+ */
 export default function Page() {
 	return (
 		<section>
