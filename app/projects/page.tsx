@@ -39,7 +39,7 @@ const projectsData = [
 		project: "Beesrani",
 		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
 		description:
-			"Agricultural platform offering African's a wide range of products & services to improve agriculture & income.",
+			"Agricultural platform offering Africans a wide range of products and services to improve agriculture and income.",
 		technologies: ["React", "Redux", "TypeScript", "Tailwind", "Grok"],
 		website: "https://beesraniagrihub.vercel.app/",
 	},
@@ -55,7 +55,7 @@ const projectsData = [
 		project: "Andika.io",
 		logo: "https://andika.io/lovable-uploads/b69d02f9-27d5-4248-b7c5-c6c1efdec241.png",
 		description:
-			"The platform helps users generate social media content & pictures using advanced trained multipele AI models catering for underserved communities at cheaper prices than mainstream AI models suchs openAI & Deepseek.",
+			"Helps users generate social media content and images using multiple fine‑tuned AI models for underserved communities, at lower cost than mainstream models such as OpenAI and DeepSeek.",
 		technologies: ["React", "Laravel", "PHP", "OpenAI", "Tailwind", "NextJs", "Plasmo", "CloudFlare"],
 		website: "https://andika.io",
 	},
@@ -69,7 +69,7 @@ const projectsData = [
 	},
 	{
 		project: "Mansion",
-		logo: "https://pms-dash-vision.lovable.app/mansion_logo.png",
+		logo: "A platform to help property managers manage properties and tenants",
 		description:
 			"A platform for aiding propety managers to manage properties and tenants.",
 		technologies: ["React", "Laravel", "Tailwind", "Docker"],

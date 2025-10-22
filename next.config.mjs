@@ -39,6 +39,12 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
+				hostname: "ivory-africa.vercel.app",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
 				hostname: "www.pms-dash-vision.lovable.app",
 				port: "",
 				pathname: "/**",
@@ -52,6 +58,12 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "www.duaranet.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "duaranet.com",
 				port: "",
 				pathname: "/**",
 			},

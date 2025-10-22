@@ -82,7 +82,7 @@ export default function Page() {
 						</Badge>
 					</span>
 					, where I maintain the project and contribute to
-					innovative solutions in providing last mile internet to Kenyans.
+					innovative solutions to provide last‑mile internet in Kenya.
 				</p>
 				<p>
 					One of my most significant achievements is developing{" "}
@@ -98,8 +98,7 @@ export default function Page() {
 							MyPhotoAI
 						</Badge>
 					</span>
-					, available as a web, iphone and Android app — your all-in-one AI image creation platform, used Create stunning AI images in seconds with cutting-edge AI technology — no design skills required.  . For more of my
-					projects, visit the <Link href="/projects">Projects</Link> page.
+					, available as web, iPhone and Android app — an all-in-one AI image creation platform. Create stunning AI images in seconds with cutting-edge AI technology — no design skills required. For more of my projects, visit the <Link href="/projects">Projects</Link> page.
 				</p>
 			</div>
 
