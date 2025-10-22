@@ -59,7 +59,7 @@ export default function Page() {
 					<span className="not-prose">
 						<Badge href="https://www.senderstack.com">
 							<Image
-								src={"https://cdn.ayushchugh.com/logos/vibraniumsoft.jpeg"}
+								src={"https://senderstack.com/images/senderstack-main-logo-2.png"}
 								alt="Senderstack"
 								height={16}
 								width={16}
@@ -70,36 +70,35 @@ export default function Page() {
 					</span>{" "}
 					where we are building intelligent AI assistants and{" "}
 					<span className="not-prose">
-						<Badge href="https://ivory-africa.vercel.app/">
+						<Badge href="https://duaranet.com/">
 							<Image
-								src={"https://cdn.ayushchugh.com/logos/keizer.svg"}
-								alt="Ivory Africa"
+								src={"https://www.duaranet.com/images/fav(1).png"}
+								alt="Duaranet"
 								height={16}
 								width={16}
 								className={"pr-1"}
 							/>
-							 Ivory Africa
+							 Duaranet
 						</Badge>
 					</span>
 					, where I maintain the project and contribute to
-					innovative solutions in job searching and matching globally and resume writing and other AI services.
+					innovative solutions to provide last‑mile internet in Kenya.
 				</p>
 				<p>
 					One of my most significant achievements is developing{" "}
 					<span className="not-prose">
-						<Badge href="https://beesraniagrihub.vercel.app/">
+						<Badge href="https://myphotoai.io/">
 							<Image
-								src={"https://cdn.ayushchugh.com/logos/worldtravels.png"}
-								alt="Smartrent"
+								src={"https://myphotoai.io/logo.svg"}
+								alt="MyPhotoAI"
 								height={16}
 								width={16}
 								className={"pr-1"}
 							/>
-							Beesrani
+							MyPhotoAI
 						</Badge>
 					</span>
-					, a combination of platforms using Artificial Intelligence (AI) to help farmers minimize input, maximize output and connect markets globally. For more of my
-					projects, visit the <Link href="/projects">Projects</Link> page.
+					, available as web, iPhone and Android app — an all-in-one AI image creation platform. Create stunning AI images in seconds with cutting-edge AI technology — no design skills required. For more of my projects, visit the <Link href="/projects">Projects</Link> page.
 				</p>
 			</div>
 
@@ -121,11 +120,11 @@ export default function Page() {
 					<a href="https://ivory-africa.vercel.app/" target="_blank">
 						Ivory Africa
 					</a>{" "}, {" "}
-					<a href="https://easy-cart-journey.vercel.app/" target="_blank">
-						Bazzu
+					<a href="https://dukakuu.co.ke/" target="_blank">
+						DukaKuu
 					</a>{" "}, {" "}
-					<a href="https://smart-rent-ashen.vercel.app/" target="_blank">
-						SmartRent
+					<a href="https://pms-dash-vision.lovable.app/" target="_blank">
+						Mansion
 					</a>{" "}among others.	
 				</p>
 			</div>

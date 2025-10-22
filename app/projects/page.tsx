@@ -37,41 +37,52 @@ export const metadata: Metadata = {
 const projectsData = [
 	{
 		project: "Beesrani",
+		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
 		description:
-			"Agricultural platform offering African's a wide range of products & services to improve agriculture & income.",
+			"Agricultural platform offering Africans a wide range of products and services to improve agriculture and income.",
 		technologies: ["React", "Redux", "TypeScript", "Tailwind", "Grok"],
 		website: "https://beesraniagrihub.vercel.app/",
 	},
 	{
 		project: "Senderstack",
-		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
+		logo: "https://senderstack.com/images/senderstack-main-logo-2.png",
 		description:
 			"Combination of a platform and apps that manage and reply to emails using Artificial Intelligence (AI).",
 		technologies: ["React", "Laravel", "PHP", "OpenAI", "Tailwind", "NextJs", "Plasmo", "CloudFlare"],
 		website: "https://www.senderstack.com",
 	},
 	{
+		project: "Andika.io",
+		logo: "https://andika.io/lovable-uploads/b69d02f9-27d5-4248-b7c5-c6c1efdec241.png",
+		description:
+			"Helps users generate social media content and images using multiple fine‑tuned AI models for underserved communities, at lower cost than mainstream models such as OpenAI and DeepSeek.",
+		technologies: ["React", "Laravel", "PHP", "OpenAI", "Tailwind", "NextJs", "Plasmo", "CloudFlare"],
+		website: "https://andika.io",
+	},
+	{
 		project: "Ivory Africa",
+		logo: "https://ivory-africa.vercel.app/ivory.svg",
 		description:
 			"A platform to connect and match talent with hiring companies in Africa.",
 		technologies: ["NextJS", "shadcn", "TypeScript", "Tailwind"],
 		website: "https://ivory-africa.vercel.app/",
 	},
 	{
-		project: "SmartRent",
+		project: "Mansion",
+		logo: "A platform to help property managers manage properties and tenants",
 		description:
 			"A platform for aiding propety managers to manage properties and tenants.",
 		technologies: ["React", "Laravel", "Tailwind", "Docker"],
-		website: "https://smart-rent-ashen.vercel.app/",
+		website: "https://pms-dash-vision.lovable.app/",
 	},
 
 	{
-		project: "Bazzu",
-		logo: "https://cdn.ayushchugh.com/logos/repository-commander.svg",
+		project: "DukaKuu",
+		logo: "https://dukakuu.co.ke/assets/dukakuu_logo-Bn7k9deC.png",
 		description:
 			"A standalone ecommerce platform to sell fashion items and toys.",
 		technologies: ["React", "TypeScript", "Remix", "FastAPI", "MySQL", "Python"],
-		website: "https://easy-cart-journey.vercel.app/",
+		website: "https://dukakuu.co.ke/",
 	},
 	{
 		project: "CodeWhisperer",
@@ -82,11 +93,12 @@ const projectsData = [
 	},
 
 	{
-		project: "Safari Travel",
+		project: "Sacred Guide AI",
+		logo: "https://dukakuu.co.ke/assets/dukakuu_logo-Bn7k9deC.png",
 		description:
-			"Travel booking website that caters to travellers of all types especially ones travelling to Africa.",
+			"An application to help both users & teachers connect spiritually with the help of AI through daily devotions, asking questions & generating sermon, including chatting on whatsapp with the AI for different religions.",
 		technologies: ["NextJS", "TypeScript", "Supabase"],
-		website: "https://safari-travel-sigma.vercel.app/",
+		website: "https://sacredguideai.pages.dev/",
 	},
 ];
 
