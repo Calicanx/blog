@@ -37,6 +37,11 @@ export const metadata: Metadata = {
 	},
 };
 
+/**
+ * Renders the personal homepage section with heading, professional summary, leadership/community notes, interests, writing links, social follow link, and contact mailto.
+ *
+ * @returns The React element tree for the home/about page content.
+ */
 export default function Page() {
 	return (
 		<section>
