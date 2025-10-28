@@ -1,6 +1,6 @@
 module.exports = {
   output: "export",
-  basePath: process.env.NODE_ENV === "production" ? "/<repo-name>" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/<repo-name>/" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/blog/" : "blog",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/blog/" : "blog",
   // and possibly disable image optimization if needed
 };
