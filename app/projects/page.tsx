@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin's Projects",
 		description:
 			"Discover the latest projects built by Yitzhak Rabin, including web development and open-source contributions.",
-		url: "https://rabi.work/projects",
+		url: "https://rabin.work/projects",
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
