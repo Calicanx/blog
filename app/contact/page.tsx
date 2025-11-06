@@ -12,11 +12,11 @@ export const metadata: Metadata = {
     title: "Contact Yitzhak Rabin",
     description:
       "Find and connect with Yitzhak Rabin via email or book a meeting.",
-    url: "https://bit.ly/rabinty/contact",
+    url: "https://rabin.work/contact",
     siteName: "Rabin's Portfolio",
     images: [
       {
-        url: "https://cdn.ayushchugh.com/open-graph/contact.png",
+        url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
         width: 1200,
         height: 630,
         alt: "Contact Yitzhak Rabin",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Yitzhak Rabin",
     description: "Connect with Yitzhak Rabin via email or schedule a meet.",
-    images: ["https://cdn.ayushchugh.com/open-graph/contact.png"],
+    images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
     creator: "@0x_Sc0rpi0n",
     creatorId: "@0x_Sc0rpi0n",
     site: "@0x_Sc0rpi0n",
@@ -49,10 +49,10 @@ export default function ContactPage() {
         <div className="flex items-center mb-4">
           <EnvelopeSimple size={24} />
           <a
-            href="mailto:hey@ayushchugh.com"
+            href="mailto:work@rabin.work"
             className="underline text-sm ml-1"
           >
-            tyberiusrabin@gmail.com
+            work@rabin.work
           </a>
         </div>
 

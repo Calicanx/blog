@@ -9,7 +9,7 @@ import type { FC } from "react";
 const socials = [
   {
     name: "Email",
-    url: "mailto:tyberiusrabin@gmail.com",
+    url: "work@rabin.work",
     logo: EnvelopeSimple,
   },
   {

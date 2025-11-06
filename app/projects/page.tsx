@@ -9,11 +9,11 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin's Projects",
 		description:
 			"Discover the latest projects built by Yitzhak Rabin, including web development and open-source contributions.",
-		url: "https://rabinty.vercel.app//projects",
+		url: "https://rabi.work/projects",
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
-				url: "https://cdn.ayushchugh.com/open-graph/projects.png",
+				url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
 				width: 1200,
 				height: 630,
 				alt: "Yitzhak Rabin's Projects",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin's Projects",
 		description:
 			"Explore a variety of projects and open-source contributions by Yitzhak Rabin.",
-		images: ["https://cdn.ayushchugh.com/open-graph/projects.png"],
+		images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
 		creator: "@0x_Sc0rpi0n",
 		creatorId: "@0x_Sc0rpi0n",
 		site: "@0x_Sc0rpi0n",
@@ -36,16 +36,8 @@ export const metadata: Metadata = {
 
 const projectsData = [
 	{
-		project: "Beesrani",
-		logo: "https://cdn.ayushchugh.com/logos/shriProperty.png",
-		description:
-			"Agricultural platform offering Africans a wide range of products and services to improve agriculture and income.",
-		technologies: ["React", "Redux", "TypeScript", "Tailwind", "Grok"],
-		website: "https://beesraniagrihub.vercel.app/",
-	},
-	{
 		project: "Senderstack",
-		logo: "https://senderstack.com/images/senderstack-main-logo-2.png",
+		logo: "https://senderstack.com/favicon.ico",
 		description:
 			"Combination of a platform and apps that manage and reply to emails using Artificial Intelligence (AI).",
 		technologies: ["React", "Laravel", "PHP", "OpenAI", "Tailwind", "NextJs", "Plasmo", "CloudFlare"],
@@ -53,15 +45,46 @@ const projectsData = [
 	},
 	{
 		project: "Andika.io",
-		logo: "https://andika.io/lovable-uploads/b69d02f9-27d5-4248-b7c5-c6c1efdec241.png",
+		logo: "https://andika.io/favicon.ico",
 		description:
 			"Helps users generate social media content and images using multiple fine‑tuned AI models for underserved communities, at lower cost than mainstream models such as OpenAI and DeepSeek.",
-		technologies: ["React", "Laravel", "PHP", "OpenAI", "Tailwind", "NextJs", "Plasmo", "CloudFlare"],
+		technologies: ["React", "Vite", "OpenAI", "Tailwind", "NextJs", "CloudFlare"],
 		website: "https://andika.io",
 	},
 	{
+		project: "Sacred Guide AI",
+		logo: "https://sacredguideai.com/favicon.ico",
+		description:
+			"An application to help both users & teachers connect spiritually with the help of AI through daily devotions, asking questions & generating sermon, including chatting on whatsapp with the AI for different religions.",
+		technologies: ["NextJS", "TypeScript", "Supabase"],
+		website: "https://sacredguideai.com/",
+	},
+	{
+		project: "MyPhotoAI",
+		logo: "https://myphotoai.io/favicon.png",
+		description:
+			"Android and iOS application to design & generate AI images that resemble real life images. Features such as CV Photo, Cartoons, Product Photos & Wedding Photos stand out differentiating from other products in the market.",
+		technologies: ["NextJS", "TypeScript", "Supabase", "Expo", "React-native"],
+		website: "https://myphtoai.io/",
+	},
+	{
+		project: "DukaKuu",
+		//logo: "https://dukakuu.co.ke/assets/DukaKuu-CX31Pe9l.png",
+		description:
+			"A standalone ecommerce platform to sell fashion items and toys.",
+		technologies: ["React", "TypeScript", "Remix", "FastAPI", "MySQL", "Python"],
+		website: "https://dukakuu.co.ke/",
+	},
+	{
+		project: "Beesrani",
+		description:
+			"Agricultural platform offering Africans a wide range of products and services to improve agriculture and income.",
+		technologies: ["React", "Redux", "TypeScript", "Tailwind", "Grok"],
+		website: "https://beesraniagrihub.vercel.app/",
+	},
+	{
 		project: "Ivory Africa",
-		logo: "https://ivory-africa.vercel.app/ivory.svg",
+		//logo: "https://ivory-africa.vercel.app/ivory.svg",
 		description:
 			"A platform to connect and match talent with hiring companies in Africa.",
 		technologies: ["NextJS", "shadcn", "TypeScript", "Tailwind"],
@@ -69,20 +92,11 @@ const projectsData = [
 	},
 	{
 		project: "Mansion",
-		logo: "A platform to help property managers manage properties and tenants",
+		logo: "https://pms-dash-vision.lovable.app/favicon.ico",
 		description:
 			"A platform for aiding propety managers to manage properties and tenants.",
 		technologies: ["React", "Laravel", "Tailwind", "Docker"],
 		website: "https://pms-dash-vision.lovable.app/",
-	},
-
-	{
-		project: "DukaKuu",
-		logo: "https://dukakuu.co.ke/assets/dukakuu_logo-Bn7k9deC.png",
-		description:
-			"A standalone ecommerce platform to sell fashion items and toys.",
-		technologies: ["React", "TypeScript", "Remix", "FastAPI", "MySQL", "Python"],
-		website: "https://dukakuu.co.ke/",
 	},
 	{
 		project: "CodeWhisperer",
@@ -90,15 +104,6 @@ const projectsData = [
 			"Web Application platform to learn about Data Structures and Algorithms for novices and experts alike. Use it as a practice and knowledge index.",
 		technologies: ["NextJS", "TypeScript", "Supabase"],
 		website: "https://codewhisperer-three.vercel.app/",
-	},
-
-	{
-		project: "Sacred Guide AI",
-		logo: "https://dukakuu.co.ke/assets/dukakuu_logo-Bn7k9deC.png",
-		description:
-			"An application to help both users & teachers connect spiritually with the help of AI through daily devotions, asking questions & generating sermon, including chatting on whatsapp with the AI for different religions.",
-		technologies: ["NextJS", "TypeScript", "Supabase"],
-		website: "https://sacredguideai.pages.dev/",
 	},
 ];
 

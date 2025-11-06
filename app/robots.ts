@@ -5,7 +5,7 @@ export default function robots() {
 				userAgent: "*",
 			},
 		],
-		sitemap: "https://ayushchugh.com/sitemap.xml",
-		host: "https://ayushchugh.com",
+		sitemap: "https://rabin.work/sitemap.xml",
+		host: "https://rabin.work",
 	};
 }

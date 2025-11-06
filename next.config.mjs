@@ -15,7 +15,49 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "senderstack.com", // <-- added (no www)
+				hostname: "senderstack.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.reduzer.tech",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "reduzer.tech",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.andika.io",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "andika.io",
+				port: "",
+				pathname: "/**",
+			},
+						{
+				protocol: "https",
+				hostname: "www.sacredguideai.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "sacredguideai.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.myphotoai.io",
 				port: "",
 				pathname: "/**",
 			},
@@ -27,13 +69,13 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "dukakuu.co.ke",
+				hostname: "www.dukakuu.co.ke",
 				port: "",
 				pathname: "/**",
 			},
 			{
 				protocol: "https",
-				hostname: "andika.io",
+				hostname: "dukakuu.co.ke",
 				port: "",
 				pathname: "/**",
 			},
@@ -64,6 +106,43 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "duaranet.com",
+				port: "",
+				pathname: "/**",
+			},
+			//resume pictures
+			{
+				protocol: "https",
+				hostname: "www.ponyeaindia.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "ponyeaindia.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.uonbi.ac.ke",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "uonbi.ac.ke",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.smartacademy.go.ke",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "smartacademy.go.ke",
 				port: "",
 				pathname: "/**",
 			},
