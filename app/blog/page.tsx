@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     title: "Yitzhak Rabin's Blog",
     description:
       "Explore blog posts on engineering, design, and product development.",
-    url: "https://rabinty.vercel.app/blog",
+    url: "https://rabin.work/blog",
     siteName: "Yitzhak Rabin's Portfolio",
     images: [
       {
-        url: "https://cdn.ayushchugh.com/open-graph/blogs.png",
+        url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
         width: 1200,
         height: 630,
         alt: "Yitzhak Rabin's Blog",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Yitzhak Rabin's Blog",
     description:
       "Read blog posts on engineering, design, and product development.",
-    images: ["https://cdn.ayushchugh.com/open-graph/blogs.png"],
+    images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
     creator: "@0x_Sc0rpi0n",
     creatorId: "@0x_Sc0rpi0n",
     site: "@0x_Sc0rpi0n",

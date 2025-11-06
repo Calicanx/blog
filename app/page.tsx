@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin",
 		description:
 			"Software Development Engineer",
-		url: "https://bit.ly/rabinty",
+		url: "https://rabin.work",
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
-				url: "https://cdn.ayushchugh.com/open-graph/home.png",
+				url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
 				height: 630,
 				alt: "Yitzhak Rabin",
 			},
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin",
 		description:
 			"Software Development Engineer",
-		images: ["https://cdn.ayushchugh.com/open-graph/home.png"],
+		images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
 		creator: "@0x_Sc0rpi0n",
 		creatorId: "@0x_Sc0rpi0n",
 		site: "@0x_Sc0rpi0n",
@@ -64,7 +64,7 @@ export default function Page() {
 					<span className="not-prose">
 						<Badge href="https://www.senderstack.com">
 							<Image
-								src={"https://senderstack.com/images/senderstack-main-logo-2.png"}
+								src={"https://senderstack.com/favicon.ico"}
 								alt="Senderstack"
 								height={16}
 								width={16}
@@ -77,7 +77,7 @@ export default function Page() {
 					<span className="not-prose">
 						<Badge href="https://duaranet.com/">
 							<Image
-								src={"https://www.duaranet.com/images/fav(1).png"}
+								src={"https://www.duaranet.com/favicon.png"}
 								alt="Duaranet"
 								height={16}
 								width={16}
@@ -86,7 +86,7 @@ export default function Page() {
 							 Duaranet
 						</Badge>
 					</span>
-					, where I maintain the project and contribute to
+					, where we contribute to
 					innovative solutions to provide last‑mile internet in Kenya.
 				</p>
 				<p>
@@ -94,7 +94,7 @@ export default function Page() {
 					<span className="not-prose">
 						<Badge href="https://myphotoai.io/">
 							<Image
-								src={"https://myphotoai.io/logo.svg"}
+								src={"https://myphotoai.io/favicon.png"}
 								alt="MyPhotoAI"
 								height={16}
 								width={16}
@@ -103,7 +103,7 @@ export default function Page() {
 							MyPhotoAI
 						</Badge>
 					</span>
-					, available as web, iPhone and Android app — an all-in-one AI image creation platform. Create stunning AI images in seconds with cutting-edge AI technology — no design skills required. For more of my projects, visit the <Link href="/projects">Projects</Link> page.
+					, available as web, iPhone and Android app — an all-in-one AI image creation platform. Creating stunning AI images in seconds with cutting-edge AI technology — no design skills required. For more of my projects, visit the <Link href="/projects">Projects</Link> page.
 				</p>
 			</div>
 
@@ -178,11 +178,11 @@ export default function Page() {
 					className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all text-neutral-600 dark:text-neutral-300 mt-3"
 					rel="noopener noreferrer"
 					target="_blank"
-					href="mailto:hey@ayushchugh.com?subject=Hello Ayush!"
+					href="mailto:work@rabin.work?subject=Hello Rabin!"
 				>
 					<p className="h-7">
 						<span className="mr-2 text-neutral-600">📧</span>
-						tyberiusrabin@gmail.com
+						work@rabin.work
 					</p>
 				</a>
 			</div>

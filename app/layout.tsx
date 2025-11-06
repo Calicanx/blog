@@ -10,7 +10,7 @@ import Cmdk from "./components/CmdK";
 import Footer from "./components/footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rabinty.vercel.app/"),
+  metadataBase: new URL("https://rabin.work"),
   title: {
     default: "Yitzhak Rabin",
     template: "%s | Yitzhak Rabin",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Yitzhak Rabin",
     description:
       "Passionate full stack developer. On the way to master programming.",
-    url: "https://rabinty.vercel.app/",
+    url: "https://rabin.work/",
     siteName: "Yitzhak Rabin's Portfolio",
     locale: "en_US",
     type: "website",
