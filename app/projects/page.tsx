@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin's Projects",
 		description:
 			"Discover the latest projects built by Yitzhak Rabin, including web development and open-source contributions.",
-		url: "https://rabi.work/projects",
+		url: "https://rabin.work/projects",
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
@@ -65,7 +65,7 @@ const projectsData = [
 		description:
 			"Android and iOS application to design & generate AI images that resemble real life images. Features such as CV Photo, Cartoons, Product Photos & Wedding Photos stand out differentiating from other products in the market.",
 		technologies: ["NextJS", "TypeScript", "Supabase", "Expo", "React-native"],
-		website: "https://myphtoai.io/",
+		website: "https://myphotoai.io/",
 	},
 	{
 		project: "DukaKuu",
