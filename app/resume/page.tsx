@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 			"Detailed resume of Yitzhak Rabin, Full-Stack Developer, with work experience, projects, and educational background.",
 		images: [
 			{
-				url: `https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75g`,
+				url: `https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75`,
 				width: 1200,
 				height: 630,
 				alt: "Yitzhak Rabin's Resume",
