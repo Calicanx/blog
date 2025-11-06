@@ -65,7 +65,7 @@ const projectsData = [
 		description:
 			"Android and iOS application to design & generate AI images that resemble real life images. Features such as CV Photo, Cartoons, Product Photos & Wedding Photos stand out differentiating from other products in the market.",
 		technologies: ["NextJS", "TypeScript", "Supabase", "Expo", "React-native"],
-		website: "https://myphtoai.io/",
+		website: "https://myphotoai.io/",
 	},
 	{
 		project: "DukaKuu",
