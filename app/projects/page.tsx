@@ -76,7 +76,7 @@ const projectsData = [
 		website: "https://dukakuu.co.ke/",
 	},
 	{
-		project: "Beesrani",
+		project: "Farmacy",
 		description:
 			"Agricultural platform offering Africans a wide range of products and services to improve agriculture and income.",
 		technologies: ["React", "Redux", "TypeScript", "Tailwind", "Grok"],
