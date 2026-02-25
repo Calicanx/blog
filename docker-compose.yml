@@ -1,7 +1,7 @@
 services:
   ayushchugh_com_nextjs:
-    image: ayushchugh.com
-    container_name: ayushchugh.com
+    image: rabin.work
+    container_name: rabin.work
     working_dir: /app
     ports:
       - "3001:3000"

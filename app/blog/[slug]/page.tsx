@@ -26,7 +26,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
 
   const ogImage = post.metadata.ogImage
     ? post.metadata.ogImage
-    : `https://cdn.ayushchugh.com/open-graph/blogs.png`;
+    : `https://rabin.work/favicon.png`;
 
   return {
     title,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       description,
       type: "article",
       publishedTime,
-      url: `https://ayushchugh.com/blog/${post.slug}`,
+      url: `https://rabin.work/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -48,10 +48,10 @@ export async function generateMetadata({ params }): Promise<Metadata | undefined
       title,
       description,
       images: [ogImage],
-      creator: "@aayushchugh_x",
-      creatorId: "@aayushchugh_x",
-      site: "@aayushchugh_x",
-      siteId: "@aayushchugh_x",
+      creator: "@0x_Sc0rpi0n",
+      creatorId: "@0x_Sc0rpi0n",
+      site: "@0x_Sc0rpi0n",
+      siteId: "@0x_Sc0rpi0n",
     },
   };
 }
@@ -79,10 +79,10 @@ export default function Blog({ params }) {
             image: post.metadata.ogImage
               ? `${post.metadata.ogImage}`
               : `${post.metadata.coverImage}`,
-            url: `https://ayushchugh.com/blog/${post.slug}`,
+            url: `https://rabin.work/blog/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "Ayush Chugh",
+              name: "Yitzhak Rabin",
             },
           }),
         }}

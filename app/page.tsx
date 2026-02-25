@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 		siteName: "Yitzhak Rabin's Portfolio",
 		images: [
 			{
-				url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
+				url: "/logo.png",
 				height: 630,
 				alt: "Yitzhak Rabin",
 			},
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 		title: "Yitzhak Rabin",
 		description:
 			"Software Development Engineer",
-		images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
+		images: ["/logo.png"],
 		creator: "@0x_Sc0rpi0n",
 		creatorId: "@0x_Sc0rpi0n",
 		site: "@0x_Sc0rpi0n",
@@ -59,38 +59,13 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Professional Work</h2>
 				<p>
-					I specialize in creating user-friendly digital experiences. Currently,
-					I work as a <strong>Senior Software Engineer</strong> at{" "}
+					Software Development Engineer building user-first AI products and{" "}
 					<span className="not-prose">
-						<Badge href="https://www.senderstack.com">
-							<Image
-								src={"https://senderstack.com/favicon.ico"}
-								alt="Senderstack"
-								height={16}
-								width={16}
-								className={"pr-1"}
-							/>
-							Senderstack Inc
+						<Badge href="https://fyberpay.com/">
+							Fyberpay
 						</Badge>
 					</span>{" "}
-					where we are building intelligent AI assistants and{" "}
-					<span className="not-prose">
-						<Badge href="https://duaranet.com/">
-							<Image
-								src={"https://www.duaranet.com/favicon.png"}
-								alt="Duaranet"
-								height={16}
-								width={16}
-								className={"pr-1"}
-							/>
-							 Duaranet
-						</Badge>
-					</span>
-					, where we contribute to
-					innovative solutions to provide last‑mile internet in Kenya.
-				</p>
-				<p>
-					One of my most significant achievements is developing{" "}
+					(an ISP billing system integrated with bank and mpesa) — creator of{" "}
 					<span className="not-prose">
 						<Badge href="https://myphotoai.io/">
 							<Image
@@ -102,8 +77,51 @@ export default function Page() {
 							/>
 							MyPhotoAI
 						</Badge>
+					</span>{" "}
+					(web · iOS · Android). Currently at{" "}
+					<span className="not-prose">
+						<Badge href="https://teachr.live/app">
+							Teachr
+						</Badge>
 					</span>
-					, available as web, iPhone and Android app — an all-in-one AI image creation platform. Creating stunning AI images in seconds with cutting-edge AI technology — no design skills required. For more of my projects, visit the <Link href="/projects">Projects</Link> page.
+					, previously at{" "}
+					<span className="not-prose">
+						<Badge href="https://www.senderstack.com">
+							<Image
+								src={"https://senderstack.com/favicon.ico"}
+								alt="Senderstack"
+								height={16}
+								width={16}
+								className={"pr-1"}
+							/>
+							Senderstack Inc
+						</Badge>
+					</span>.
+				</p>
+			</div>
+
+			<div className="mb-8 prose prose-neutral dark:prose-invert">
+				<p>
+					I’m driven by building high-impact AI solutions. Beyond MyPhotoAI, I developed{" "}
+					<span className="not-prose">
+						<Badge href="https://sacredguideai.com/">
+							<Image
+								src={"https://sacredguideai.com/favicon.ico"}
+								alt="Sacred Guide AI"
+								height={16}
+								width={16}
+								className={"pr-1"}
+							/>
+							Sacred Guide AI
+						</Badge>
+					</span>
+					— an AI espiritual companion that bridges technology and faith. I also founded{" "}
+					<span className="not-prose">
+						<Badge href="https://trendiq.io/">
+							TrendIQ
+						</Badge>
+					</span>
+					, a platform dedicated to translating complex market trends into actionable digital strategies. For a deeper dive into my work, check out the <Link href="/projects">Projects</Link> page.
 				</p>
 			</div>
 
@@ -112,43 +130,45 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Leadership & Community</h2>
 				<p>
-					As the Team Lead at {" "}
+					During my tenure as the Team Lead at {" "}
 					<a href="https://senderstack.com/" target="_blank">
 						Senderstack
+					</a>{" "}
+					and {" "}
+					<a href="https://myphotoai.io/" target="_blank">
+						MyPhotoAI
 					</a>
-					, I’ve learned how to lead a team and stay organized. I also assist in{" "}
+					, I learned how to lead a team and stay organized. I also assist in{" "}
 					<a href="https://www.smartacademy.go.ke/" target="_blank">
 						ICT
 					</a>{" "}
 					training sessions, teaching government employees, farmers and regular citizens essential computer
-					skills and cybersecurity. Additionally, I manage a few companies and Saas started through the years such as {" "}
-					<a href="https://ivory-africa.vercel.app/" target="_blank">
-						Ivory Africa
-					</a>{" "}, {" "}
-					<a href="https://dukakuu.co.ke/" target="_blank">
-						DukaKuu
-					</a>{" "}, {" "}
-					<a href="https://pms-dash-vision.lovable.app/" target="_blank">
-						Mansion
-					</a>{" "}among others.	
+					skills and cybersecurity. Additionally, I lead and manage several innovative projects including{" "}
+					<span className="not-prose">
+						<Badge href="https://afri-recruit.pages.dev/">
+							Afri-Recruit
+						</Badge>
+					</span>,{" "}
+					<span className="not-prose">
+						<Badge href="https://propulse.pages.dev/">
+							ProPulse
+						</Badge>
+					</span>,{" "}
+					<span className="not-prose">
+						<Badge href="https://beesraniagrihub.vercel.app/">
+							Farmacy
+						</Badge>
+					</span>, and the various AI platforms highlighted above.
 				</p>
 			</div>
 
-			<Separator />
-
-			<div className="mb-8 prose prose-neutral dark:prose-invert">
-				<h2>Personal Interests</h2>
-				<p>
-					Outside of work, I enjoy reading philosophy, fiction, and non-fiction books, riding motorcycles, spending quality time with friends, and advancing my pentesting skills.
-				</p>
-			</div>
 
 			<Separator />
 
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Writing</h2>
 				<p>
-					I’ve started writing <Link href="/blog">blogs</Link> to help myself and others 
+					I’ve started writing <Link href="/blog">blogs</Link> to help myself and others
 					improve engineering skills. And act as a reference for knowledge over the years.
 				</p>
 			</div>

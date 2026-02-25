@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "Rabin's Portfolio",
     images: [
       {
-        url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Contact Yitzhak Rabin",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Yitzhak Rabin",
     description: "Connect with Yitzhak Rabin via email or schedule a meet.",
-    images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
+    images: ["/logo.png"],
     creator: "@0x_Sc0rpi0n",
     creatorId: "@0x_Sc0rpi0n",
     site: "@0x_Sc0rpi0n",

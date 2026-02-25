@@ -10,6 +10,7 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   website: string;
+  discontinued?: boolean;
 }
 
 const ProjectCard: FC<ProjectCardProps> = ({
@@ -18,6 +19,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   description,
   technologies,
   website,
+  discontinued,
 }) => {
   return (
     <div className="mb-6">
@@ -28,7 +30,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
             alt={title}
             width={24}
             height={24}
-            className="mr-4"
+            className="mr-2"
           />
         ) : (
           <p className="mt-0 mb-0">{"->"}</p>
@@ -38,6 +40,11 @@ const ProjectCard: FC<ProjectCardProps> = ({
             {title}
           </Link>
         </h3>
+        {discontinued && (
+          <span className="ml-3 text-[10px] font-bold uppercase tracking-wider text-red-600 dark:text-red-400">
+            Discontinued
+          </span>
+        )}
       </div>
       <p className="text-neutral-600 dark:text-neutral-400 text-sm">
         {description}

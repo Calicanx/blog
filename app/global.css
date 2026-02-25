@@ -49,7 +49,7 @@ j .prose a {
 	content: "#";
 }
 
-.prose *:hover > .anchor {
+.prose *:hover>.anchor {
 	@apply visible;
 }
 
@@ -86,7 +86,7 @@ h4 {
 	@apply font-medium;
 }
 
-.prose > :first-child {
+.prose> :first-child {
 	/* Override removing top margin, causing layout shift */
 	margin-top: 1.25em !important;
 	margin-bottom: 1.25em !important;
@@ -97,8 +97,10 @@ pre::-webkit-scrollbar {
 }
 
 pre {
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	/* IE and Edge */
+	scrollbar-width: none;
+	/* Firefox */
 }
 
 /* Remove Safari input shadow on mobile */
@@ -121,7 +123,7 @@ table {
 	white-space: nowrap;
 }
 
-.prose .callout > p {
+.prose .callout>p {
 	margin: 0 !important;
 }
 
@@ -130,29 +132,114 @@ table {
 }
 
 @media print {
+
 	body,
 	html {
 		width: 100%;
-		margin-top: 10px;
+		margin: 0;
 		padding: 0;
-		background-color: #ffffff; /* Ensures a white background */
+		background-color: #ffffff;
+		color: #000000;
 	}
 
-	.no-print {
-		display: none; /* Hides elements with the 'no-print' class during printing */
+	main {
+		margin-top: 0 !important;
+		max-width: 100% !important;
+		padding: 0 !important;
 	}
 
-	/* Adjust the font size, visibility, or other properties for print */
+	.no-print,
+	aside,
+	footer,
+	article {
+		display: none !important;
+	}
+
+	.prose {
+		max-width: none !important;
+	}
+
+	h1 {
+		font-size: 24pt !important;
+		margin-bottom: 8pt !important;
+	}
+
+	h2 {
+		font-size: 18pt !important;
+		margin-top: 20pt !important;
+		margin-bottom: 10pt !important;
+		border-bottom: 1px solid #eee;
+		padding-bottom: 4pt;
+	}
+
+	h3 {
+		font-size: 14pt !important;
+		margin-top: 12pt !important;
+		margin-bottom: 4pt !important;
+	}
+
+	p,
+	li {
+		font-size: 10pt !important;
+		line-height: 1.4 !important;
+	}
+
+	a {
+		text-decoration: none !important;
+		color: #000 !important;
+		font-weight: 500 !important;
+	}
+
+	.page-break {
+		page-break-before: always;
+	}
+
+	/* Reduce spacing for print */
+	.mb-8 {
+		margin-bottom: 1rem !important;
+	}
+
+	.mt-8 {
+		margin-top: 1rem !important;
+	}
+
+	.my-6 {
+		margin-top: 0.5rem !important;
+		margin-bottom: 0.5rem !important;
+	}
+
+	/* Hide all images on print for a cleaner look */
+	main img {
+		display: none !important;
+	}
+
+	/* Simplify chips for print */
+	.bg-neutral-100,
+	.dark\:bg-neutral-900 {
+		background: none !important;
+		border: 1px solid #ccc !important;
+		color: #333 !important;
+		padding: 2px 6px !important;
+		margin-right: 4px !important;
+		border-radius: 4px !important;
+	}
+
+	/* Ensure headings are clean */
 	h1,
 	h2,
 	h3 {
-		font-size: 12pt; /* Example: Change heading sizes */
-		color: #000000; /* Ensure black text for better print visibility */
+		page-break-after: avoid;
 	}
-	.margin-10 {
-		margin-top: 30px;
+
+	/* Prevent page breaks inside work items */
+	.prose>div {
+		page-break-inside: avoid;
+		margin-bottom: 15pt !important;
 	}
-	.page-break {
-		page-break-before: always; /* Forces a page break before the element */
+
+	/* Social/Contact links */
+	.print\:block a {
+		color: #000 !important;
+		text-decoration: none !important;
 	}
 }
