@@ -95,6 +95,14 @@ const projectsData = [
 		website: "https://myphotoai.io/",
 	},
 	{
+		project: "DukaKuu",
+		//logo: "https://dukakuu.co.ke/assets/DukaKuu-CX31Pe9l.png",
+		description:
+			"A standalone ecommerce platform to sell fashion items and toys.",
+		technologies: ["React", "TypeScript", "Remix", "FastAPI", "MySQL", "Python"],
+		website: "https://dukakuu.co.ke/",
+	},
+	{
 		project: "Farmacy",
 		description:
 			"Agricultural platform offering Africans a wide range of products and services to improve agriculture and income.",

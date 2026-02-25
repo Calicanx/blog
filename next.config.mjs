@@ -1,5 +1,6 @@
 const nextConfig = {
 	images: {
+		unoptimized: true,
 		remotePatterns: [
 			{
 				protocol: "https",
@@ -172,6 +173,7 @@ const nextConfig = {
 			}
 		],
 	},
+	output: "export",
 	// async redirects() {
 	// 	if (!process.env.POSTGRES_URL) {
 	// 		return [];
