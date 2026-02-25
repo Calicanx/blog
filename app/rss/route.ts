@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { getBlogPosts } from "../db/blog";
 
 const SITE_URL = process.env.APP_URL;
@@ -37,36 +39,31 @@ const generateRSSFeed = (posts: ReturnType<typeof getBlogPosts>) => {
             <guid>${postUrl}</guid>
             <pubDate>${new Date(metadata.publishedAt).toUTCString()}</pubDate>
             
-            ${
-							metadata.coverImage &&
-							`
+            ${metadata.coverImage &&
+				`
               <!-- Inline image in the description -->
               <description><![CDATA[
-                <img src="${metadata.coverImage}" alt="${
-								metadata.title
-							} Cover Image"/>
+                <img src="${metadata.coverImage}" alt="${metadata.title
+				} Cover Image"/>
                 <p>${metadata.summary}</p>
               ]]></description>
               
               <!-- Enclosure for feed readers that look for enclosure tags -->
-              <enclosure url="${
-								metadata.coverImage
-							}" length="0" type="${getMimeTypeForImage(
-								metadata.coverImage
-							)}" />
+              <enclosure url="${metadata.coverImage
+				}" length="0" type="${getMimeTypeForImage(
+					metadata.coverImage
+				)}" />
   
               <!-- Media RSS extension for richer media support -->
-              <media:content url="${
-								metadata.coverImage
-							}" type="${getMimeTypeForImage(
-								metadata.coverImage
-							)}" medium="image">
-                <media:title><![CDATA[${
-									metadata.title
-								} Cover Image]]></media:title>
+              <media:content url="${metadata.coverImage
+				}" type="${getMimeTypeForImage(
+					metadata.coverImage
+				)}" medium="image">
+                <media:title><![CDATA[${metadata.title
+				} Cover Image]]></media:title>
               </media:content>
               `
-						}
+				}
           </item>`;
 		})
 		.join("");

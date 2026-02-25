@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Yitzhak Rabin's Portfolio",
     images: [
       {
-        url: "https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Yitzhak Rabin's Blog",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Yitzhak Rabin's Blog",
     description:
       "Read blog posts on engineering, design, and product development.",
-    images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
+    images: ["/logo.png"],
     creator: "@0x_Sc0rpi0n",
     creatorId: "@0x_Sc0rpi0n",
     site: "@0x_Sc0rpi0n",

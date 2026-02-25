@@ -6,17 +6,17 @@ import VolunteeringItem from "../components/volunteer-item";
 export const metadata: Metadata = {
 	title: "Resume",
 	description:
-		"A summary of Yitzhak Rabin’s corporate contributions, skills, and experience as a Full-Stack Developer, including work with Tap Invest, Shri Property, and A2INFINITE.",
+		"A summary of Yitzhak Rabin’s corporate contributions, skills, and experience as a Software Development Engineer, including work with Teachr, Senderstack, and Duarafiber.",
 	openGraph: {
 		type: "article",
 		url: `https://rabin.work/`,
 		title: "Yitzhak Rabin’s Resume",
 		siteName: "Yitzhak Rabin's Portfolio",
 		description:
-			"Detailed resume of Yitzhak Rabin, Full-Stack Developer, with work experience, projects, and educational background.",
+			"Detailed resume of Yitzhak Rabin, Software Development Engineer, with work experience, projects, and educational background.",
 		images: [
 			{
-				url: `https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75`,
+				url: "/logo.png",
 				width: 1200,
 				height: 630,
 				alt: "Yitzhak Rabin's Resume",
@@ -25,24 +25,39 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "YItzhak Rabin's Resume",
+		title: "Yitzhak Rabin's Resume",
 		description:
-			"Check out Yitzhak Rabin’s Full-Stack Developer resume, showcasing professional contributions and achievements.",
-		images: ["https://reduzer.tech/_next/image?url=%2Fassets%2Freduzer-logo.png&w=64&q=75"],
-		creator: "@aayushchugh_x",
-		creatorId: "@aayushchugh_x",
-		site: "@aayushchugh_x",
-		siteId: "@aayushchugh_x",
+			"Check out Yitzhak Rabin’s Software Development Engineer resume, showcasing professional contributions and achievements.",
+		images: ["/logo.png"],
+		creator: "@0x_Sc0rpi0n",
+		creatorId: "@0x_Sc0rpi0n",
+		site: "@0x_Sc0rpi0n",
+		siteId: "@0x_Sc0rpi0n",
 	},
 };
 
 const resumeData = {
 	workExperience: [
 		{
+			company: "Teachr",
+			logo: "https://teachr.live/favicon.ico",
+			role: "SDE",
+			period: "Jan 2025 - Present",
+			location: "US",
+			workType: "Consultant",
+			website: "https://teachr.live/app",
+			technologies: ["NextJS", "TypeScript", "Tailwind CSS", "OpenAI", "Gemini", "MongoDB", "Nodejs", "React", "FastAPI", "Docker"],
+			responsibilities: [
+				"Contributing to AI-powered customized learning experiences, developing intelligent platforms that adapt to student needs.",
+				"Consulting on the architectural design and implementation of AI-driven educational assistants to enhance student engagement.",
+				"Optimizing large-scale web applications for performance and scalability, ensuring a smooth learning experience for thousands of users.",
+			],
+		},
+		{
 			company: "Senderstack Inc",
 			logo: "https://senderstack.com/favicon.ico",
 			role: "SDE",
-			period: "June 2024 - Present",
+			period: "June 2024 - Dec 2024",
 			location: "US",
 			workType: "Staff Engineer",
 			website: "https://www.senderstack.com/",
@@ -69,6 +84,21 @@ const resumeData = {
 				"Optimized backend data processing algorithms such as OpenAI API, reducing email analysis time by 35% and enhancing overall system performance.",
 				"Collaborated with UI/UX designers to revamp the user interface, significantly elevating the user experience and increasing positive feedback by 50%.",
 				"Implemented continuous performance monitoring and proactive system analytics to identify bottlenecks and optimize resource allocation, enhancing operational efficiency.",
+			],
+		},
+		{
+			company: "Duarafiber",
+			logo: "https://duarafiber.com/images/DuaraLogo.png",
+			role: "SDE",
+			period: "2023 - 2024",
+			location: "Kenya",
+			workType: "Consultant",
+			website: "https://duarafiber.com/",
+			technologies: ["React", "PHP", "MySQL", "Networking", "DevOps"],
+			responsibilities: [
+				"Contributed to building last-mile internet tools to provide innovative solutions for connectivity in Kenya.",
+				"Designed and implemented internal tools to better manage network infrastructure and customer support workflows.",
+				"Optimized data collection and reporting systems, improving operational efficiency by 40%.",
 			],
 		},
 		{
@@ -128,8 +158,9 @@ const resumeData = {
 			period: "Oct 2023 - Present",
 			location: "Nairobi, Kenya",
 			responsibilities: [
-				"Part of the team teaching and training other trainers to train farmers.",
-				"Providing hands-on skills training to farmers in the field equiping them with digital and government skills that aid in farming.",
+				"Assistant in ICT training sessions, teaching government employees, farmers, and regular citizens essential computer skills and cybersecurity.",
+				"Part of the team training other trainers to empower local farmers with digital and government tools.",
+				"Providing hands-on field training to equip citizens with practical digital skills for daily use and specialized farming applications.",
 			],
 		},
 	],
@@ -140,8 +171,19 @@ export default function WorkPage() {
 		<section>
 			<div className="flex">
 				<h1 className='font-medium text-2xl mb-2 tracking-tight font-["monospace"]'>
-					My Resume 📝
+					<span className="print:hidden">My Resume 📝</span>
+					<span className="hidden print:block">Yitzhak Rabin</span>
 				</h1>
+			</div>
+
+			{/* Contact Info - Visible only on Print */}
+			<div className="hidden print:block mb-8 text-neutral-600 dark:text-neutral-400">
+				<div className="grid grid-cols-2 gap-2 text-sm">
+					<div>📧 <a href="mailto:work@rabin.work">work@rabin.work</a></div>
+					<div>🌐 <a href="https://rabin.work">rabin.work</a></div>
+					<div>📞 0796305577</div>
+					<div>📍 Nairobi, Kenya</div>
+				</div>
 			</div>
 
 			{/* Work Section */}

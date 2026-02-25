@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     template: "%s | Yitzhak Rabin",
   },
   description:
-    "Passionate full stack developer. On the way to master programming",
+    "Senior Software Engineer building user-first AI products and last-mile internet tools.",
   openGraph: {
     title: "Yitzhak Rabin",
     description:
-      "Passionate full stack developer. On the way to master programming.",
+      "Senior Software Engineer building user-first AI products and last-mile internet tools.",
     url: "https://rabin.work/",
     siteName: "Yitzhak Rabin's Portfolio",
     locale: "en_US",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     site: "@0x_Sc0rpi0n",
     siteId: "@0x_Sc0rpi0n",
     description:
-      "Passionate full stack developer. On the way to master programming.",
+      "Senior Software Engineer building user-first AI products and last-mile internet tools.",
     images: ["/ogs/ogs-bg.png"],
   },
   icons: {
