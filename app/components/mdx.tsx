@@ -7,23 +7,95 @@ import React from "react";
 
 function Table({ data }) {
 	let headers = data.headers.map((header, index) => (
-		<th key={index}>{header}</th>
+		<th
+			key={index}
+			className="px-6 py-4 font-semibold text-neutral-900 dark:text-neutral-100"
+		>
+			{header}
+		</th>
 	));
 	let rows = data.rows.map((row, index) => (
-		<tr key={index}>
+		<tr
+			key={index}
+			className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/50 transition-colors"
+		>
 			{row.map((cell, cellIndex) => (
-				<td key={cellIndex}>{cell}</td>
+				<td
+					key={cellIndex}
+					className={`px-6 py-4 text-neutral-600 dark:text-neutral-400 ${cellIndex === 0 ? "font-medium text-neutral-900 dark:text-neutral-100" : ""
+						}`}
+				>
+					{cell}
+				</td>
 			))}
 		</tr>
 	));
 
 	return (
-		<table>
-			<thead>
-				<tr>{headers}</tr>
-			</thead>
-			<tbody>{rows}</tbody>
-		</table>
+		<div className="my-8 w-full overflow-hidden border border-neutral-200 dark:border-neutral-800 rounded-xl">
+			<div className="overflow-x-auto">
+				<table className="w-full min-w-full text-sm text-left border-collapse">
+					<thead>
+						<tr className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+							{headers}
+						</tr>
+					</thead>
+					<tbody className="divide-y divide-neutral-200 dark:divide-neutral-800">
+						{rows}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	);
+}
+
+function Comparison({ results }) {
+	return (
+		<div className="flex flex-col gap-4 my-8">
+			{results.map((result, i) => (
+				<div
+					key={i}
+					className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-sm"
+				>
+					<div className="flex flex-col">
+						<span className="text-xs font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-1">
+							Approach
+						</span>
+						<span className="font-semibold text-neutral-900 dark:text-neutral-100">
+							{result.approach}
+						</span>
+					</div>
+					<div className="flex gap-8 mt-4 md:mt-0">
+						<div className="flex flex-col">
+							<span className="text-xs font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-1">
+								Time
+							</span>
+							<code
+								className={`text-sm font-mono px-2 py-0.5 rounded ${result.time === "O(n)"
+									? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+									: "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+									}`}
+							>
+								{result.time}
+							</code>
+						</div>
+						<div className="flex flex-col">
+							<span className="text-xs font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-1">
+								Space
+							</span>
+							<code
+								className={`text-sm font-mono px-2 py-0.5 rounded ${result.space === "O(1)"
+									? "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+									: "bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+									}`}
+							>
+								{result.space}
+							</code>
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
 	);
 }
 
@@ -154,7 +226,7 @@ function createHeading(level) {
 	};
 }
 
-let components = {
+const components = {
 	h1: createHeading(1),
 	h2: createHeading(2),
 	h3: createHeading(3),
@@ -169,6 +241,36 @@ let components = {
 	StaticTweet: TweetComponent,
 	code: Code,
 	Table,
+	table: ({ children }) => (
+		<div className="my-8 w-full overflow-hidden border border-neutral-200 dark:border-neutral-800 rounded-xl">
+			<div className="overflow-x-auto">
+				<table className="w-full min-w-full text-sm text-left border-collapse">
+					{children}
+				</table>
+			</div>
+		</div>
+	),
+	thead: ({ children }) => (
+		<thead className="bg-neutral-50 dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800">
+			{children}
+		</thead>
+	),
+	tr: ({ children }) => (
+		<tr className="border-b border-neutral-200 dark:border-neutral-800 last:border-0 hover:bg-neutral-50/50 dark:hover:bg-neutral-900/50 transition-colors">
+			{children}
+		</tr>
+	),
+	th: ({ children }) => (
+		<th className="px-6 py-4 font-semibold text-neutral-900 dark:text-neutral-100">
+			{children}
+		</th>
+	),
+	td: ({ children }) => (
+		<td className="px-6 py-4 text-neutral-600 dark:text-neutral-400">
+			{children}
+		</td>
+	),
+	Comparison,
 };
 
 export function CustomMDX(props) {

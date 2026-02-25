@@ -43,7 +43,7 @@ const nextConfig = {
 				port: "",
 				pathname: "/**",
 			},
-		{
+			{
 				protocol: "https",
 				hostname: "www.sacredguideai.com",
 				port: "",
@@ -99,13 +99,13 @@ const nextConfig = {
 			},
 			{
 				protocol: "https",
-				hostname: "www.duaranet.com",
+				hostname: "www.duarafiber.com",
 				port: "",
 				pathname: "/**",
 			},
 			{
 				protocol: "https",
-				hostname: "duaranet.com",
+				hostname: "duarafiber.com",
 				port: "",
 				pathname: "/**",
 			},
@@ -155,6 +155,18 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "i.pinimg.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "fyberpay.com",
+				port: "",
+				pathname: "/**",
+			},
+			{
+				protocol: "https",
+				hostname: "www.fyberpay.com",
 				port: "",
 				pathname: "/**",
 			}
