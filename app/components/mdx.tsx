@@ -6,7 +6,7 @@ import { highlight } from "sugar-high";
 import React from "react";
 
 function Table({ data }) {
-	let headers = data.headers.map((header, index) => (
+	let headers = (data?.headers || []).map((header, index) => (
 		<th
 			key={index}
 			className="px-6 py-4 font-semibold text-neutral-900 dark:text-neutral-100"
@@ -14,12 +14,12 @@ function Table({ data }) {
 			{header}
 		</th>
 	));
-	let rows = data.rows.map((row, index) => (
+	let rows = (data?.rows || []).map((row, index) => (
 		<tr
 			key={index}
 			className="hover:bg-neutral-50/50 dark:hover:bg-neutral-900/50 transition-colors"
 		>
-			{row.map((cell, cellIndex) => (
+			{(row || []).map((cell, cellIndex) => (
 				<td
 					key={cellIndex}
 					className={`px-6 py-4 text-neutral-600 dark:text-neutral-400 ${cellIndex === 0 ? "font-medium text-neutral-900 dark:text-neutral-100" : ""
@@ -52,7 +52,7 @@ function Table({ data }) {
 function Comparison({ results }) {
 	return (
 		<div className="flex flex-col gap-4 my-8">
-			{results.map((result, i) => (
+			{(results || []).map((result, i) => (
 				<div
 					key={i}
 					className="flex flex-col md:flex-row md:items-center justify-between p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-sm"
@@ -143,7 +143,7 @@ function ProsCard({ title, pros }) {
 		<div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
 			<span>{`You might use ${title} if...`}</span>
 			<div className="mt-4">
-				{pros.map(pro => (
+				{(pros || []).map(pro => (
 					<div key={pro} className="flex font-medium items-baseline mb-2">
 						<div className="h-4 w-4 mr-2">
 							<svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
@@ -172,7 +172,7 @@ function ConsCard({ title, cons }) {
 		<div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
 			<span>{`You might not use ${title} if...`}</span>
 			<div className="mt-4">
-				{cons.map(con => (
+				{(cons || []).map(con => (
 					<div key={con} className="flex font-medium items-baseline mb-2">
 						<div className="h-4 w-4 mr-2">
 							<svg

@@ -61,12 +61,6 @@ export default function Page() {
 				<p>
 					Software Development Engineer building user-first AI products and{" "}
 					<span className="not-prose">
-						<Badge href="https://fyberpay.com/">
-							Fyberpay
-						</Badge>
-					</span>{" "}
-					(an ISP billing system integrated with bank and mpesa) — creator of{" "}
-					<span className="not-prose">
 						<Badge href="https://myphotoai.io/">
 							<Image
 								src={"https://myphotoai.io/favicon.png"}
@@ -78,11 +72,12 @@ export default function Page() {
 							MyPhotoAI
 						</Badge>
 					</span>{" "}
-					(web · iOS · Android). Currently at{" "}
+					(web · iOS · Android) — creator of{" "}
 					<span className="not-prose">
-						<Badge href="https://teachr.live/app">
-							Teachr
-						</Badge>
+						<Badge href="https://afri-recruit.pages.dev/">Afri-Recruit</Badge>
+					</span>. Currently at{" "}
+					<span className="not-prose">
+						<Badge href="https://teachr.live/app">Teachr</Badge>
 					</span>
 					, previously at{" "}
 					<span className="not-prose">
