@@ -40,7 +40,7 @@ const resumeData = {
 	workExperience: [
 		{
 			company: "Teachr",
-			logo: "https://teachr.live/favicon.ico",
+			logo: "/logos/teachr.png",
 			role: "SDE",
 			period: "Jan 2025 - Present",
 			location: "US",
@@ -148,6 +148,7 @@ const resumeData = {
 			degree: "Bsc. Mathematics",
 			period: "2017 - 2021",
 			location: "Nairobi, Kenya",
+			website: "https://www.uonbi.ac.ke",
 		},
 	],
 	volunteering: [
@@ -157,6 +158,7 @@ const resumeData = {
 			role: "Trainer & Consultant",
 			period: "Oct 2023 - Present",
 			location: "Nairobi, Kenya",
+			website: "https://www.smartacademy.go.ke/",
 			responsibilities: [
 				"Assistant in ICT training sessions, teaching government employees, farmers, and regular citizens essential computer skills and cybersecurity.",
 				"Part of the team training other trainers to empower local farmers with digital and government tools.",
@@ -178,9 +180,11 @@ export default function WorkPage() {
 
 			{/* Contact Info - Visible only on Print */}
 			<div className="hidden print:block mb-8 text-neutral-600 dark:text-neutral-400">
-				<div className="grid grid-cols-2 gap-2 text-sm">
-					<div>📧 <a href="mailto:work@rabin.work">work@rabin.work</a></div>
-					<div>🌐 <a href="https://rabin.work">rabin.work</a></div>
+				<div className="grid grid-cols-2 gap-y-2 gap-x-8 text-sm">
+					<div>📧 <a href="mailto:work@rabin.work" className="no-underline">work@rabin.work</a></div>
+					<div>🌐 <a href="https://rabin.work" className="no-underline">rabin.work</a></div>
+					<div>🔗 <a href="https://linkedin.com/in/rabinty" className="no-underline">linkedin.com/in/rabinty</a></div>
+					<div>🐙 <a href="https://github.com/Calicanx" className="no-underline">github.com/Calicanx</a></div>
 					<div>📞 0796305577</div>
 					<div>📍 Nairobi, Kenya</div>
 				</div>

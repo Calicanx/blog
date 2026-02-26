@@ -119,9 +119,10 @@ function CustomLink(props) {
 }
 
 function RoundedImage(props) {
+	if (!props.src) return null;
 	return (
 		<Image
-			alt={props.alt}
+			alt={props.alt || ""}
 			className="rounded-lg"
 			width={props.width || 1200}
 			height={props.height || 630}
@@ -140,13 +141,14 @@ function Callout(props) {
 }
 
 function ProsCard({ title, pros }) {
+	const items = Array.isArray(pros) ? pros : (typeof pros === 'string' ? [pros] : []);
 	return (
 		<div className="border border-emerald-200 dark:border-emerald-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-4 w-full">
-			<span>{`You might use ${title} if...`}</span>
+			<span className="font-semibold text-emerald-900 dark:text-emerald-100">{`You might use ${title} if...`}</span>
 			<div className="mt-4">
-				{(pros || []).map(pro => (
-					<div key={pro} className="flex font-medium items-baseline mb-2">
-						<div className="h-4 w-4 mr-2">
+				{items.map((pro, i) => (
+					<div key={i} className="flex font-medium items-baseline mb-2 text-neutral-700 dark:text-neutral-300">
+						<div className="h-4 w-4 mr-2 flex-shrink-0">
 							<svg className="h-4 w-4 text-emerald-500" viewBox="0 0 24 24">
 								<g
 									fill="none"
@@ -169,13 +171,13 @@ function ProsCard({ title, pros }) {
 }
 
 function ConsCard({ title, cons }) {
-	const items = Array.isArray(cons) ? cons : [];
+	const items = Array.isArray(cons) ? cons : (typeof cons === 'string' ? [cons] : []);
 	return (
 		<div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
 			<span className="font-semibold text-red-900 dark:text-red-100">{`You might not use ${title} if...`}</span>
 			<div className="mt-4">
-				{items.map(con => (
-					<div key={con} className="flex font-medium items-baseline mb-2 text-neutral-700 dark:text-neutral-300">
+				{items.map((con, i) => (
+					<div key={i} className="flex font-medium items-baseline mb-2 text-neutral-700 dark:text-neutral-300">
 						<div className="h-4 w-4 mr-2 flex-shrink-0">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

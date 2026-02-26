@@ -20,22 +20,32 @@ const WorkExperienceItem: FC<WorkExperienceItemProps> = ({ job }) => {
   return (
     <div>
       <h3 className="font-medium text-xl mb-1 tracking-tighter flex items-center">
-        <Image
-          src={job.logo}
-          alt={job.company}
-          width={20}
-          height={20}
-          className="mr-4"
-        />
+        {job.logo && (
+          <Image
+            src={job.logo}
+            alt={job.company}
+            width={20}
+            height={20}
+            className="mr-4 print-logo"
+          />
+        )}
         <a
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-2"
+          className={job.logo ? "ml-2" : ""}
           href={job.website}
         >
           {job.company}
         </a>
       </h3>
+      {job.website && (
+        <a
+          href={job.website}
+          className="hidden print:block text-xs text-blue-600 dark:text-blue-400 mb-1 no-underline font-normal"
+        >
+          {job.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+        </a>
+      )}
       <p className="text-neutral-600 dark:text-neutral-400 text-sm">
         {job.role} | {job.period} | {job.location}
         {job.workType && ` | ${job.workType}`}

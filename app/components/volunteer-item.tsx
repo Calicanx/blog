@@ -8,6 +8,7 @@ interface VolunteeringItemProps {
     role: string;
     period: string;
     location: string;
+    website?: string;
     responsibilities: string[];
   };
 }
@@ -22,13 +23,21 @@ const VolunteeringItem: FC<VolunteeringItemProps> = ({ volunteer }) => {
             alt={volunteer.organization}
             width={20}
             height={20}
-            className="mr-4"
+            className="mr-4 print-logo"
           />
         )}
         <span className={volunteer.logo ? "ml-2" : ""}>
           {volunteer.organization}
         </span>
       </h3>
+      {volunteer.website && (
+        <a
+          href={volunteer.website}
+          className="hidden print:block text-xs text-blue-600 dark:text-blue-400 mb-1 no-underline font-normal"
+        >
+          {volunteer.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+        </a>
+      )}
       <p className="text-neutral-600 dark:text-neutral-400 text-sm">
         {volunteer.role} | {volunteer.period} | {volunteer.location}
       </p>

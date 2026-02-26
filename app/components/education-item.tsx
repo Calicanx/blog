@@ -8,6 +8,7 @@ interface EducationItemProps {
     degree: string;
     period: string;
     location: string;
+    website?: string;
   };
 }
 
@@ -21,11 +22,19 @@ const EducationItem: FC<EducationItemProps> = ({ edu }) => {
             alt={edu.institution}
             width={20}
             height={20}
-            className="mr-4"
+            className="mr-4 print-logo"
           />
         )}
         <span className={edu.logo ? "ml-2" : ""}>{edu.institution}</span>
       </h3>
+      {edu.website && (
+        <a
+          href={edu.website}
+          className="hidden print:block text-xs text-blue-600 dark:text-blue-400 mb-1 no-underline font-normal"
+        >
+          {edu.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+        </a>
+      )}
       <p className="text-neutral-600 dark:text-neutral-400 text-sm">
         {edu.degree} | {edu.period} | {edu.location}
       </p>

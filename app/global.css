@@ -208,9 +208,9 @@ table {
 		margin-bottom: 0.5rem !important;
 	}
 
-	/* Hide all images on print for a cleaner look */
-	main img {
-		display: none !important;
+	/* Ensure logos are visible in print */
+	.print-logo {
+		display: block !important;
 	}
 
 	/* Simplify chips for print */
