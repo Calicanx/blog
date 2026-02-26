@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { TweetComponent } from "./tweet";
 import { highlight } from "sugar-high";
 import React from "react";
+import remarkGfm from "remark-gfm";
 
 function Table({ data }) {
 	let headers = (data?.headers || []).map((header, index) => (
@@ -168,13 +169,14 @@ function ProsCard({ title, pros }) {
 }
 
 function ConsCard({ title, cons }) {
+	const items = Array.isArray(cons) ? cons : [];
 	return (
 		<div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
-			<span>{`You might not use ${title} if...`}</span>
+			<span className="font-semibold text-red-900 dark:text-red-100">{`You might not use ${title} if...`}</span>
 			<div className="mt-4">
-				{(cons || []).map(con => (
-					<div key={con} className="flex font-medium items-baseline mb-2">
-						<div className="h-4 w-4 mr-2">
+				{items.map(con => (
+					<div key={con} className="flex font-medium items-baseline mb-2 text-neutral-700 dark:text-neutral-300">
+						<div className="h-4 w-4 mr-2 flex-shrink-0">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 20 20"
@@ -278,6 +280,11 @@ export function CustomMDX(props) {
 		<MDXRemote
 			{...props}
 			components={{ ...components, ...(props.components || {}) }}
+			options={{
+				mdxOptions: {
+					remarkPlugins: [remarkGfm],
+				},
+			}}
 		/>
 	);
 }

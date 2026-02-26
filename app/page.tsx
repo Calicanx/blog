@@ -59,7 +59,7 @@ export default function Page() {
 			<div className="mb-8 prose prose-neutral dark:prose-invert">
 				<h2>Professional Work</h2>
 				<p>
-					Software Development Engineer building user-first AI products and{" "}
+					Software Development Engineer building user-first AI products such as{" "}
 					<span className="not-prose">
 						<Badge href="https://myphotoai.io/">
 							<Image
@@ -110,7 +110,7 @@ export default function Page() {
 							Sacred Guide AI
 						</Badge>
 					</span>
-					— an AI espiritual companion that bridges technology and faith. I also founded{" "}
+					— an AI spiritual companion that bridges technology and faith. I also founded{" "}
 					<span className="not-prose">
 						<Badge href="https://trendiq.io/">
 							TrendIQ
