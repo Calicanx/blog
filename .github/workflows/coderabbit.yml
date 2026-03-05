@@ -1,0 +1,14 @@
+# .coderabbit.yaml
+review:
+  enable: true
+  reviewers:
+    - gpt
+  review_scope: full
+  comment_style: concise
+  auto_approve: false
+  auto_merge: false
+
+rules:
+  - name: "No console.log in production"
+    pattern: "console\\.log"
+    message: "Remove console.log before merging"

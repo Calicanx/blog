@@ -1,0 +1,343 @@
+name: Perform code review
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository (pinned)
+        # pinned major version. If you'd like a fixed minor version, replace v4 with a specific tag (e.g. v4.2.0)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Python (compatible version)
+        uses: actions/setup-python@v5
+        with:
+          # Use a stable Python that's widely compatible; change if your deps require a different minor
+          python-version: '3.11'
+
+      - name: Install dependencies (pinned)
+        run: |
+          python -m pip install --upgrade pip
+          # pin requests to avoid unexpected future breaking changes
+          pip install "requests==2.31.0"
+
+      - name: Verify OpenAI Key
+        run: |
+          if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+            echo "::error::OPENAI_API_KEY is missing. Please add it to Settings > Secrets and variables > Actions > New repository secret"
+            exit 1
+          fi
+
+      - name: Perform code review
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+          MODEL: gpt-4o
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          set -euo pipefail
+          cat <<'PY' > code_review.py
+          #!/usr/bin/env python3
+          """
+          Robust GitHub Actions code-review script:
+           - Fetches existing PR review comments and PR diff
+           - Calls OpenAI to obtain JSON with "resolved", "new_comments", "summary"
+           - Validates and posts replies for resolved comments, inline comments, and summary
+          Safety & improvements:
+           - Timeouts and retries for network calls
+           - No secrets logged
+           - Validation of new comments inputs
+          """
+          import os
+          import sys
+          import json
+          import re
+          import time
+          import requests
+          from typing import Any, Dict, List
+
+          # --- Config from env ---
+          OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+          GH_TOKEN = os.getenv("GH_TOKEN")
+          MODEL = os.getenv("MODEL", "gpt-4o")
+          REPO = os.getenv("REPO")
+          PR_NUMBER = os.getenv("PR_NUMBER")
+          HEAD_SHA = os.getenv("HEAD_SHA")
+          BASE_SHA = os.getenv("BASE_SHA")
+
+          if not OPENAI_API_KEY:
+              print("Error: OPENAI_API_KEY not set", file=sys.stderr)
+              sys.exit(1)
+          if not GH_TOKEN:
+              print("Error: GH_TOKEN (github.token) not set", file=sys.stderr)
+              sys.exit(1)
+          if not REPO or not PR_NUMBER:
+              print("Error: REPO or PR_NUMBER not set", file=sys.stderr)
+              sys.exit(1)
+
+          GH_HEADERS = {
+              "Authorization": f"token {GH_TOKEN}",
+              "Accept": "application/vnd.github.v3+json",
+              "User-Agent": "github-actions-code-review"
+          }
+
+          # --- Utility with retries for network calls ---
+          def do_request(method: str, url: str, headers: dict = None, **kwargs) -> requests.Response:
+              headers = headers or {}
+              retries = 3
+              backoff = 1.0
+              for attempt in range(1, retries + 1):
+                  try:
+                      resp = requests.request(method, url, headers={**GH_HEADERS, **headers}, timeout=30, **kwargs)
+                      return resp
+                  except requests.RequestException as e:
+                      print(f"Network error (attempt {attempt}/{retries}): {e}", file=sys.stderr)
+                      if attempt == retries:
+                          raise
+                      time.sleep(backoff)
+                      backoff *= 2.0
+
+          # --- Fetch existing review comments (inline PR comments) ---
+          def get_review_comments() -> List[Dict[str, Any]]:
+              url = f"https://api.github.com/repos/{REPO}/pulls/{PR_NUMBER}/comments"
+              resp = do_request("GET", url)
+              if resp.status_code != 200:
+                  print(f"Warning: failed to fetch review comments: {resp.status_code} {resp.text[:1000]}", file=sys.stderr)
+                  return []
+              return resp.json()
+
+          # --- Fetch PR diff (patch) ---
+          def get_pr_diff() -> str:
+              url = f"https://api.github.com/repos/{REPO}/pulls/{PR_NUMBER}"
+              headers = {"Accept": "application/vnd.github.v3.diff"}
+              resp = do_request("GET", url, headers=headers)
+              if resp.status_code != 200:
+                  print(f"Warning: failed to fetch PR diff: {resp.status_code} {resp.text[:1000]}", file=sys.stderr)
+                  return ""
+              return resp.text
+
+          # --- Call OpenAI with retries & timeouts ---
+          def call_openai(system_prompt: str, user_prompt: str) -> str:
+              url = "https://api.openai.com/v1/chat/completions"
+              headers = {
+                  "Authorization": f"Bearer {OPENAI_API_KEY}",
+                  "Content-Type": "application/json"
+              }
+              payload = {
+                  "model": MODEL,
+                  "messages": [
+                      {"role": "system", "content": system_prompt},
+                      {"role": "user", "content": user_prompt}
+                  ],
+                  "temperature": 0.0,
+                  "max_tokens": 1500
+              }
+              # network-level retries
+              attempts = 3
+              wait = 1.0
+              for i in range(attempts):
+                  try:
+                      r = requests.post(url, headers=headers, json=payload, timeout=30)
+                  except requests.RequestException as e:
+                      print(f"OpenAI request network error (attempt {i+1}/{attempts}): {e}", file=sys.stderr)
+                      if i == attempts - 1:
+                          raise
+                      time.sleep(wait)
+                      wait *= 2.0
+                      continue
+
+                  if r.status_code == 200:
+                      try:
+                          j = r.json()
+                          content = j["choices"][0]["message"]["content"]
+                          return content
+                      except Exception as e:
+                          # JSON decode error or unexpected structure
+                          print(f"OpenAI response parse error: {e}", file=sys.stderr)
+                          print("OpenAI raw response (truncated):", r.text[:2000], file=sys.stderr)
+                          raise
+                  else:
+                      # handle rate limits or server errors with backoff if possible
+                      print(f"OpenAI API returned {r.status_code}: {r.text[:1000]}", file=sys.stderr)
+                      if r.status_code in (429, 500, 502, 503, 504) and i < attempts - 1:
+                          time.sleep(wait)
+                          wait *= 2.0
+                          continue
+                      r.raise_for_status()
+              raise RuntimeError("Failed calling OpenAI after retries")
+
+          # --- Extract JSON robustly from model output ---
+          def extract_json_from_text(s: str):
+              # 1) Try direct parse
+              try:
+                  return json.loads(s)
+              except Exception:
+                  pass
+
+              # 2) Try fenced block ```json ... ```
+              m = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', s, re.DOTALL)
+              if m:
+                  try:
+                      return json.loads(m.group(1))
+                  except Exception:
+                      pass
+
+              # 3) Find first and last braces
+              start = s.find("{")
+              end = s.rfind("}")
+              if start != -1 and end != -1 and end > start:
+                  candidate = s[start:end+1]
+                  try:
+                      return json.loads(candidate)
+                  except Exception:
+                      pass
+
+              # 4) As a fallback, attempt to salvage by removing trailing non-json
+              # This is last resort; if it fails, return None
+              raise ValueError("Could not extract JSON from model output")
+
+          # --- Post a 'resolved' reply to an existing review comment ID ---
+          def reply_resolved(comment_id: int):
+              url = f"https://api.github.com/repos/{REPO}/pulls/{PR_NUMBER}/comments"
+              payload = {"body": "resolved", "in_reply_to": int(comment_id)}
+              resp = do_request("POST", url, json=payload)
+              if resp.status_code not in (200, 201):
+                  print(f"Failed to post resolved reply to comment {comment_id}: {resp.status_code} {resp.text[:1000]}", file=sys.stderr)
+              else:
+                  print(f"Replied 'resolved' to comment {comment_id}")
+
+          # --- Post inline comment (validate inputs carefully) ---
+          def post_inline_comment(path: str, line: int, body: str, commit_id: str, side: str = "RIGHT"):
+              # validation
+              if not isinstance(path, str) or not path or ".." in path:
+                  print(f"Invalid path provided: {path}", file=sys.stderr)
+                  return
+              try:
+                  line = int(line)
+                  if line <= 0:
+                      print(f"Invalid line number: {line}", file=sys.stderr)
+                      return
+              except Exception:
+                  print(f"Line conversion error for {line}", file=sys.stderr)
+                  return
+              if not isinstance(body, str) or not body.strip():
+                  print("Empty body for inline comment; skipping", file=sys.stderr)
+                  return
+              if side not in ("RIGHT", "LEFT"):
+                  side = "RIGHT"
+
+              url = f"https://api.github.com/repos/{REPO}/pulls/{PR_NUMBER}/comments"
+              payload = {
+                  "body": body[:1000],  # limit body size
+                  "commit_id": commit_id or HEAD_SHA,
+                  "path": path,
+                  "line": line,
+                  "side": side
+              }
+              resp = do_request("POST", url, json=payload)
+              if resp.status_code not in (200, 201):
+                  print(f"Failed to post inline comment on {path}:{line} (status {resp.status_code}) - response truncated: {resp.text[:1000]}", file=sys.stderr)
+              else:
+                  print(f"Posted inline comment on {path}:{line}")
+
+          # --- Post summary comment on PR (issue comment endpoint) ---
+          def post_summary(summary_text: str):
+              if not summary_text or not summary_text.strip():
+                  return
+              url = f"https://api.github.com/repos/{REPO}/issues/{PR_NUMBER}/comments"
+              payload = {"body": summary_text[:65000]}
+              resp = do_request("POST", url, json=payload)
+              if resp.status_code not in (200, 201):
+                  print(f"Failed to post summary comment: {resp.status_code} {resp.text[:1000]}", file=sys.stderr)
+              else:
+                  print("Posted summary comment.")
+
+          # --- Main flow ---
+          def main():
+              review_comments = get_review_comments()
+              diff = get_pr_diff()
+
+              system_prompt = (
+                  "You are an expert code reviewer producing JSON output only. "
+                  "Schema (exact): {\"resolved\": [int,...], \"new_comments\": [{\"path\":\"file\",\"line\":int,\"side\":\"RIGHT\",\"body\":\"text\"},...], \"summary\":\"text\"}\n"
+                  "Guidelines: focus on high-severity issues (security, correctness, performance). "
+                  "Leave up to 10 short (1-2 sentences) inline comments on changed lines only. "
+                  "If an existing review comment is addressed in the diff, include its id in 'resolved'. "
+              )
+
+              # Limit sizes to avoid huge requests
+              existing_comments_json = json.dumps(review_comments)[:12000]
+              diff_truncated = diff[:200000]
+
+              user_prompt = (
+                  f"Repo: {REPO}\nPR: {PR_NUMBER}\nHead SHA: {HEAD_SHA}\nBase SHA: {BASE_SHA}\n\n"
+                  f"Existing review comments (JSON snippet):\n{existing_comments_json}\n\n"
+                  f"Diff (truncated):\n{diff_truncated}\n\n"
+                  "Return EXACTLY the JSON described above and nothing else."
+              )
+
+              try:
+                  raw_model_output = call_openai(system_prompt, user_prompt)
+              except Exception as e:
+                  print(f"OpenAI call failed: {e}", file=sys.stderr)
+                  # As a safe fallback, post a summary that the automated review failed
+                  post_summary("Automated code review failed due to an internal error. Please check the CI logs.")
+                  sys.exit(1)
+
+              try:
+                  data = extract_json_from_text(raw_model_output)
+              except Exception as e:
+                  print("Failed to parse model output as JSON:", e, file=sys.stderr)
+                  print("Raw model output (truncated):", raw_model_output[:5000], file=sys.stderr)
+                  # Post the raw model output as a non-blocking summary to assist debugging (no secrets)
+                  post_summary("Automated reviewer could not parse model output. Raw output:\n\n" + raw_model_output[:6000])
+                  sys.exit(1)
+
+              # resolved: reply to comment IDs
+              for cid in data.get("resolved", [])[:50]:
+                  try:
+                      reply_resolved(int(cid))
+                  except Exception as e:
+                      print(f"Error replying resolved for {cid}: {e}", file=sys.stderr)
+
+              # new_comments: validate and post, limit to 10
+              new_comments = data.get("new_comments", [])[:10]
+              for c in new_comments:
+                  try:
+                      path = c.get("path")
+                      line = c.get("line")
+                      body = c.get("body")
+                      side = c.get("side", "RIGHT")
+                      # commit id: prefer HEAD_SHA
+                      commit_id = c.get("commit_id") or HEAD_SHA
+                      post_inline_comment(path, line, body, commit_id, side)
+                  except Exception as e:
+                      print(f"Error posting inline comment: {e}", file=sys.stderr)
+
+              # summary
+              summary = data.get("summary", "")
+              if summary:
+                  post_summary(summary)
+
+              print("Automated review completed successfully.")
+
+          if __name__ == "__main__":
+              main()
+          PY
+          # run the script
+          python3 code_review.py
