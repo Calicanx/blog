@@ -185,8 +185,8 @@ export default function WorkPage() {
 					<div>🌐 <a href="https://rabin.work" className="no-underline">rabin.work</a></div>
 					<div>🔗 <a href="https://linkedin.com/in/rabinty" className="no-underline">linkedin.com/in/rabinty</a></div>
 					<div>🐙 <a href="https://github.com/Calicanx" className="no-underline">github.com/Calicanx</a></div>
-					<div>📞 0796305577</div>
-					<div>📍 Nairobi, Kenya</div>
+					<div>📞 +1(651) 413-9185</div>
+					<div>📍 Dover, United States</div>
 				</div>
 			</div>
 
