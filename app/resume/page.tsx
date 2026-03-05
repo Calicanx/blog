@@ -42,7 +42,7 @@ const resumeData = {
 			company: "Teachr",
 			logo: "/logos/teachr.png",
 			role: "SDE",
-			period: "Jan 2025 - Present",
+			period: "Jan 2026 - Present",
 			location: "US",
 			workType: "Consultant",
 			website: "https://teachr.live/app",

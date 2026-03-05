@@ -1,0 +1,137 @@
+---
+title: "Mastering Linked Lists: Finding the Kth Last Node"
+publishedAt: "2026-03-05"
+summary: "Understand the fundamentals of Linked Lists and learn the elegant two-pointer approach to finding the Kth last node in a single pass."
+---
+
+Linked lists are one of those data structures that frequently pop up in technical interviews and real-world system design alike. While arrays offer O(1) random access, linked lists shine when it comes to dynamic memory allocation and efficient insertions or deletions. But navigating them can sometimes feel like walking through a maze blindfolded—you only know where you are and where to go next.
+
+Today, we're going to break down how to effectively traverse linked lists and tackle a classic problem: **Finding the Kth last node in a singly linked list.**
+
+---
+
+## What is a Linked List?
+
+At its core, a singly linked list is a sequence of nodes. Each node contains two things:
+1. **Data:** The value you want to store.
+2. **Next Pointer:** A reference to the next node in the sequence.
+
+Unlike arrays, these nodes aren't stored contiguously in memory. To find the 5th element, you must start at the `head` and traverse through the first four nodes.
+
+```javascript
+class ListNode {
+  constructor(value = 0, next = null) {
+    this.value = value;
+    this.next = next;
+  }
+}
+```
+
+This structural limitation introduces interesting challenges when you need to access elements from the *end* of the list.
+
+---
+
+## The Problem: Find the Kth Last Node
+
+Imagine you have a linked list and you need to find the element that is `k` steps from the end. If `k = 1`, you want the last node. If `k = 2`, you want the second to last, and so on.
+
+### The "Brute Force" Approach (Two Passes)
+
+The most intuitive way to solve this is to figure out to exactly how long the list is:
+
+1. Traverse the entire list to count the total number of nodes, `N`.
+2. Calculate the target index from the beginning: `N - k`.
+3. Traverse the list a second time, stopping at the calculated index.
+
+```javascript
+function findKthFromEndTwoPasses(head, k) {
+  let length = 0;
+  let current = head;
+  
+  // First pass: find length
+  while (current !== null) {
+    length++;
+    current = current.next;
+  }
+  
+  // Second pass: find N - k th node
+  let targetIndex = length - k;
+  if (targetIndex < 0) return null; // Case: k is larger than list length
+  
+  current = head;
+  for (let i = 0; i < targetIndex; i++) {
+    current = current.next;
+  }
+  
+  return current;
+}
+```
+
+<Callout emoji="🤔">
+  **The Catch:** While this is strictly O(N) time complexity, it requires looping through the list twice. If your linked list is massive, or if the list is being streamed and you can't easily iterate twice, this approach won't cut it.
+</Callout>
+
+---
+
+## The Elegant Solution: Two Pointers (One Pass)
+
+How can we find a node from the end without knowing the total length beforehand? We can use the **Runner Technique** (a variation of the two-pointer approach).
+
+We use two pointers, let's call them `fast` and `slow`. 
+
+### The Algorithm:
+1. Start both `fast` and `slow` pointers at the `head` of the list.
+2. Move the `fast` pointer `k` steps ahead. Now, the gap between `fast` and `slow` is exactly `k` nodes.
+3. Move both pointers forward one step at a time until the `fast` pointer hits the end of the list (`null`).
+4. Because the gap is `k`, when `fast` reaches the end, `slow` will be pointing exactly at the Kth last node!
+
+```javascript
+function findKthFromEnd(head, k) {
+  let slow = head;
+  let fast = head;
+
+  // Move fast pointer k steps ahead
+  for (let i = 0; i < k; i++) {
+    if (fast === null) return null; // k is strictly greater than list length
+    fast = fast.next;
+  }
+
+  // Move both pointers until fast reaches the end
+  while (fast !== null) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+
+  return slow;
+}
+```
+
+### Why This is Better
+- **Time Complexity:** O(N) - We only traverse the list once.
+- **Space Complexity:** O(1) - We only use two pointers, regardless of the list size.
+
+---
+
+## Common Gotchas
+
+When working with linked lists and pointers, boundary conditions are your biggest enemy.
+
+<ConsCard 
+  title="Boundary Conditions to Watch Out For" 
+  cons={[
+    "What if the list is empty (head is null)?",
+    "What if k is larger than the total number of nodes in the list?",
+    "What if k is exactly the length of the list? (You should return the head).",
+    "What if k is 0 or negative?"
+  ]} 
+/>
+
+Handling these edge cases gracefully, as shown in the one-pass solution snippet, is what separates a good algorithm from a great (and bug-free) one in production.
+
+---
+
+## Wrapping Up
+
+The "Runner" technique isn't just useful for finding the Kth last node. It’s a foundational pattern for solving many linked list problems efficiently, such as finding the middle node, detecting cycles, or determining if a linked list is a palindrome.
+
+Next time you encounter a linked list problem, see if adding a second pointer pointing elsewhere in the structure can simplify your logic!
