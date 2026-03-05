@@ -57,7 +57,7 @@ const resumeData = {
 			company: "Senderstack Inc",
 			logo: "https://senderstack.com/favicon.ico",
 			role: "SDE",
-			period: "June 2024 - Dec 2024",
+			period: "June 2024 - Jan 2025",
 			location: "US",
 			workType: "Staff Engineer",
 			website: "https://www.senderstack.com/",
